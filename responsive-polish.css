@@ -1,0 +1,319 @@
+/* Responsive layout system shared by the full website. */
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  overflow: clip;
+}
+
+.topbar,
+.site-header,
+.shell,
+.section-shell {
+  width: min(1120px, calc(100% - 2rem));
+}
+
+.pro-hero,
+.app-detail-hero {
+  align-items: stretch;
+}
+
+.pro-app-card,
+.app-product-card,
+.pro-feature-card,
+.app-detail-card,
+.app-tech-card,
+.detail-panel,
+.info-card {
+  min-width: 0;
+}
+
+.pro-feature-grid,
+.app-product-grid,
+.pro-process-grid,
+.detail-grid,
+.info-grid,
+.app-page-grid {
+  min-width: 0;
+}
+
+@media (min-width: 1280px) {
+  .topbar,
+  .site-header,
+  .shell,
+  .section-shell {
+    width: min(1180px, calc(100% - 3rem));
+  }
+
+  .pro-hero-main,
+  .pro-hero-side {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .topbar,
+  .site-header,
+  .shell,
+  .section-shell {
+    width: min(100% - 2rem, 980px);
+  }
+
+  .pro-hero,
+  .app-detail-hero,
+  .pro-split,
+  .approach-grid,
+  .profile-section {
+    grid-template-columns: 1fr;
+  }
+
+  .sticky-copy {
+    position: static;
+  }
+
+  .pro-feature-grid,
+  .app-product-grid,
+  .detail-grid,
+  .app-page-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .info-grid,
+  .pro-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .topbar,
+  .site-header {
+    position: sticky;
+    top: .75rem;
+    grid-template-columns: 1fr;
+    display: grid;
+    border-radius: 24px;
+    padding: .7rem;
+  }
+
+  .brand,
+  .pro-brand {
+    justify-content: center;
+  }
+
+  .nav {
+    justify-content: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: .1rem;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav a {
+    white-space: nowrap;
+  }
+
+  .pro-hero,
+  .app-detail-hero {
+    grid-template-columns: 1fr;
+    padding-top: 3.2rem;
+    gap: .9rem;
+  }
+
+  .pro-hero-main,
+  .pro-hero-side,
+  .app-detail-main,
+  .app-detail-side {
+    min-height: auto;
+  }
+
+  .pro-feature-grid,
+  .app-product-grid,
+  .published-app-grid,
+  .app-page-grid,
+  .detail-grid,
+  .info-grid,
+  .pro-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pro-feature-card,
+  .app-product-card,
+  .published-app-card {
+    min-height: auto;
+  }
+
+  .pro-contact,
+  .contact-panel,
+  .contact-card,
+  .footer,
+  .site-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1rem;
+  }
+
+  .footer div,
+  .site-footer div,
+  .actions,
+  .app-detail-actions,
+  .pro-link-row {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --radius-xl: 22px;
+    --radius-lg: 18px;
+  }
+
+  .topbar,
+  .site-header,
+  .shell,
+  .section-shell {
+    width: min(100% - 1rem, 100%);
+  }
+
+  .topbar,
+  .site-header {
+    top: .5rem;
+    margin-top: .5rem;
+  }
+
+  .brand-photo,
+  .profile-mini-photo {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .pro-hero {
+    padding-top: 2.6rem;
+    padding-bottom: 2rem;
+  }
+
+  .pro-section,
+  .section-block,
+  .section-shell,
+  .app-page-grid {
+    padding-top: 2.9rem;
+    padding-bottom: 2.9rem;
+  }
+
+  .pro-hero-main,
+  .pro-hero-side,
+  .app-detail-main,
+  .app-detail-side,
+  .pro-feature-card,
+  .app-product-card,
+  .published-app-card,
+  .pro-capability-list article,
+  .pro-process-grid article,
+  .pro-contact,
+  .contact-panel,
+  .contact-card,
+  .detail-panel,
+  .info-card,
+  .app-detail-card,
+  .app-tech-card,
+  .app-store-panel {
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  .pro-hero-main h1,
+  h1 {
+    font-size: clamp(1.9rem, 9vw, 2.65rem);
+    line-height: 1.12;
+  }
+
+  h2,
+  .pro-section-heading h2,
+  .app-detail-card h2,
+  .app-tech-card h2,
+  .app-store-panel h2 {
+    font-size: clamp(1.28rem, 6vw, 1.8rem);
+    line-height: 1.18;
+  }
+
+  h3,
+  .pro-feature-card h3,
+  .app-product-card h3 {
+    font-size: clamp(1.08rem, 4.8vw, 1.32rem);
+  }
+
+  p,
+  .lead,
+  .hero-text,
+  .pro-feature-card p,
+  .app-product-card p,
+  .detail-panel p,
+  .info-card p,
+  .app-detail-card p,
+  .app-store-panel p {
+    font-size: .94rem;
+    line-height: 1.58;
+  }
+
+  .eyebrow,
+  .card-kicker,
+  .small-label {
+    font-size: .64rem;
+    letter-spacing: .1em;
+  }
+
+  .button,
+  .app-store-badge,
+  .app-secondary-link {
+    width: 100%;
+    min-height: 2.75rem;
+  }
+
+  .actions,
+  .app-detail-actions {
+    width: 100%;
+  }
+
+  .pro-app-icon,
+  .app-card-icon,
+  .published-app-icon,
+  .published-app-card img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 14px;
+  }
+
+  .app-icon-large {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 18px;
+  }
+
+  .liquid-scroll-field {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav a {
+    padding: .48rem .58rem;
+    font-size: .84rem;
+  }
+
+  .brand span {
+    font-size: .9rem;
+  }
+
+  .footer,
+  .site-footer {
+    font-size: .9rem;
+  }
+}
