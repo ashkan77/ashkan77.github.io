@@ -1,0 +1,72 @@
+.page-hero {
+  padding: 4.4rem 0 2.4rem;
+}
+
+.page-hero .eyebrow {
+  margin-bottom: .85rem;
+}
+
+.page-hero h1 {
+  max-width: 720px;
+  font-size: clamp(2rem, 3.4vw, 3.2rem);
+  line-height: 1.1;
+}
+
+.page-hero .hero-text,
+.page-hero .lead {
+  max-width: 680px;
+  font-size: clamp(.98rem, 1.25vw, 1.08rem);
+  line-height: 1.65;
+}
+
+.detail-grid,
+.info-grid {
+  gap: 1rem;
+}
+
+.detail-panel,
+.info-card {
+  border: 1px solid var(--final-border, rgba(24, 28, 36, 0.12));
+  background: linear-gradient(145deg, rgba(255,255,255,.84), rgba(255,255,255,.58)), var(--final-card, rgba(255,255,255,.82));
+  box-shadow: var(--final-shadow, 0 14px 34px rgba(29, 34, 45, 0.09));
+  backdrop-filter: blur(22px) saturate(150%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .detail-panel,
+  .info-card {
+    background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.025)), var(--final-card, rgba(25,27,34,.76));
+  }
+}
+
+.detail-panel h2,
+.info-card h3 {
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.16;
+  margin-bottom: .75rem;
+}
+
+.detail-panel p,
+.info-card p {
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+.detail-list li {
+  border: 1px solid var(--final-border, rgba(24, 28, 36, 0.12));
+  background: rgba(255,255,255,.32);
+}
+
+.site-header {
+  border-color: var(--final-border, rgba(24, 28, 36, 0.12));
+}
+
+.site-footer {
+  color: var(--final-muted, #555d6b);
+}
+
+@media (max-width: 920px) {
+  .page-hero {
+    padding-top: 3.6rem;
+  }
+}
