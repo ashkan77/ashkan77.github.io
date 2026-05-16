@@ -1,0 +1,51 @@
+:root {
+  --bg: #f6f4ef;
+  --ink: #17181c;
+  --muted: #666d7a;
+  --muted-2: #8a8f99;
+  --panel: rgba(255, 255, 255, 0.68);
+  --panel-strong: rgba(255, 255, 255, 0.92);
+  --glass-line: rgba(255, 255, 255, 0.64);
+  --line: rgba(30, 34, 42, 0.08);
+  --blue: #2f5bd3;
+  --cyan: #4bb8d8;
+  --mint: #38b89d;
+  --purple: #6d6af2;
+  --pink: #d96886;
+  --orange: #d88a35;
+  --blue-soft: rgba(47, 91, 211, 0.10);
+  --shadow: 0 18px 48px rgba(36, 40, 52, 0.10);
+  --soft-shadow: 0 10px 28px rgba(36, 40, 52, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0c10;
+    --ink: #f6f4ef;
+    --muted: #a6adbb;
+    --muted-2: #858c9a;
+    --panel: rgba(25, 27, 34, 0.66);
+    --panel-strong: rgba(34, 36, 45, 0.88);
+    --glass-line: rgba(255, 255, 255, 0.14);
+    --line: rgba(255, 255, 255, 0.10);
+    --blue: #8fb0ff;
+    --cyan: #76d4df;
+    --mint: #66d7bd;
+    --purple: #aaa3ff;
+    --pink: #f096ad;
+    --orange: #f0b16a;
+  }
+}
+
+body {
+  background: radial-gradient(circle at 14% -10%, rgba(47, 91, 211, 0.14), transparent 27rem), radial-gradient(circle at 86% 2%, rgba(75, 184, 216, 0.10), transparent 24rem), radial-gradient(circle at 72% 92%, rgba(56, 184, 157, 0.08), transparent 25rem), var(--bg);
+}
+
+.brand-mark,
+.button.primary { background: linear-gradient(135deg, var(--blue), var(--cyan)); }
+.solira-icon { background: linear-gradient(135deg, #3fc7a9, #376ad8); }
+.code-icon { background: linear-gradient(135deg, #252833, #6d6af2); }
+.guide-icon { background: linear-gradient(135deg, #d99a46, #d96886); }
+.audio-icon { background: linear-gradient(135deg, #7d6cf2, #4b76dd); }
+.store-icon { background: linear-gradient(135deg, #2f5bd3, #4bb8d8); }
+.scroll-progress { background: linear-gradient(90deg, var(--blue), var(--cyan), var(--mint)); }
