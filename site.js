@@ -4,6 +4,41 @@ const progress = document.querySelector('.scroll-progress');
 const sections = document.querySelectorAll('.reveal-section');
 const publishedAppsContainer = document.querySelector('#published-apps');
 
+const appStoreApps = [
+  {
+    id: '6762309864',
+    name: 'Watch Audio Player',
+    subtitle: 'Audio player for Apple Watch',
+    url: 'https://apps.apple.com/tr/app/watch-audio-player/id6762309864',
+    fallbackClass: 'audio-icon',
+    initials: 'W'
+  },
+  {
+    id: '6753948436',
+    name: 'Converter One',
+    subtitle: 'Unit and daily converter',
+    url: 'https://apps.apple.com/tr/app/converter-one/id6753948436',
+    fallbackClass: 'store-icon',
+    initials: 'C'
+  },
+  {
+    id: '6749022797',
+    name: 'BMI Checker Plus',
+    subtitle: 'BMI and health utility',
+    url: 'https://apps.apple.com/tr/app/bmi-checker-plus/id6749022797',
+    fallbackClass: 'solira-icon',
+    initials: 'B'
+  },
+  {
+    id: '6738957040',
+    name: 'World Guide App',
+    subtitle: 'Travel and city guide',
+    url: 'https://apps.apple.com/tr/app/world-guide-app/id6738957040',
+    fallbackClass: 'guide-icon',
+    initials: 'W'
+  }
+];
+
 const updateGlass = () => {
   const scrollY = window.scrollY;
   const maxScroll = Math.max(document.body.scrollHeight - window.innerHeight, 1);
@@ -39,30 +74,6 @@ const escapeHtml = (value) => String(value || '').replace(/[&<>'"]/g, (character
   '"': '&quot;'
 }[character]));
 
-const fallbackApps = [
-  {
-    name: 'App Store Profile',
-    subtitle: 'Official developer page',
-    url: 'https://apps.apple.com/ca/developer/ashkan-zanjani/id1501855480',
-    fallbackClass: 'store-icon',
-    initials: 'A'
-  },
-  {
-    name: 'Solira Health',
-    subtitle: 'Product case study',
-    url: 'projects/solira-health.html',
-    fallbackClass: 'solira-icon',
-    initials: 'S'
-  },
-  {
-    name: 'Code IDE',
-    subtitle: 'Product case study',
-    url: 'projects/code-ide.html',
-    fallbackClass: 'code-icon',
-    initials: 'C'
-  }
-];
-
 const renderAppCards = (apps) => {
   if (!publishedAppsContainer) return;
 
@@ -85,33 +96,42 @@ const renderAppCards = (apps) => {
 
 const getArtwork = (app) => {
   const artwork = app.artworkUrl512 || app.artworkUrl100 || app.artworkUrl60 || '';
-  return artwork.replace('100x100bb', '512x512bb').replace('60x60bb', '512x512bb');
+  return artwork
+    .replace('100x100bb', '512x512bb')
+    .replace('60x60bb', '512x512bb');
+};
+
+const fetchAppStoreApp = async (app) => {
+  const endpoint = `https://itunes.apple.com/lookup?id=${encodeURIComponent(app.id)}&country=tr`;
+  const response = await fetch(endpoint, { cache: 'no-store' });
+  if (!response.ok) throw new Error('App Store lookup failed');
+
+  const data = await response.json();
+  const item = (data.results || []).find((result) => result.wrapperType === 'software' || result.kind === 'software');
+  if (!item) return app;
+
+  return {
+    ...app,
+    name: item.trackName || app.name,
+    subtitle: item.primaryGenreName || app.subtitle,
+    icon: getArtwork(item),
+    url: app.url
+  };
 };
 
 const loadPublishedApps = async () => {
   if (!publishedAppsContainer) return;
 
-  const developerId = publishedAppsContainer.dataset.developerId || '1501855480';
-  const endpoint = `https://itunes.apple.com/lookup?id=${encodeURIComponent(developerId)}&entity=software&country=ca&limit=50`;
+  renderAppCards(appStoreApps);
 
   try {
-    const response = await fetch(endpoint, { cache: 'no-store' });
-    if (!response.ok) throw new Error('App Store lookup failed');
-
-    const data = await response.json();
-    const apps = (data.results || [])
-      .filter((item) => item.wrapperType === 'software' || item.kind === 'software')
-      .map((item) => ({
-        name: item.trackName,
-        subtitle: item.primaryGenreName || 'App Store app',
-        url: item.trackViewUrl,
-        icon: getArtwork(item)
-      }))
-      .filter((item) => item.name && item.url);
-
-    renderAppCards(apps.length ? apps : fallbackApps);
+    const settledApps = await Promise.allSettled(appStoreApps.map(fetchAppStoreApp));
+    const apps = settledApps.map((result, index) => (
+      result.status === 'fulfilled' ? result.value : appStoreApps[index]
+    ));
+    renderAppCards(apps);
   } catch (error) {
-    renderAppCards(fallbackApps);
+    renderAppCards(appStoreApps);
   }
 };
 
