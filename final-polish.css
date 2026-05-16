@@ -1,0 +1,299 @@
+:root {
+  --final-bg: #f7f6f2;
+  --final-ink: #17181d;
+  --final-muted: #555d6b;
+  --final-soft: #727987;
+  --final-card: rgba(255, 255, 255, 0.82);
+  --final-card-strong: rgba(255, 255, 255, 0.96);
+  --final-border: rgba(24, 28, 36, 0.12);
+  --final-blue: #3156c8;
+  --final-cyan: #409fbd;
+  --final-green: #2d9f88;
+  --final-purple: #6866d8;
+  --final-shadow: 0 14px 34px rgba(29, 34, 45, 0.09);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --final-bg: #0b0c10;
+    --final-ink: #f4f2ed;
+    --final-muted: #b0b5c0;
+    --final-soft: #8f95a1;
+    --final-card: rgba(25, 27, 34, 0.76);
+    --final-card-strong: rgba(35, 37, 46, 0.92);
+    --final-border: rgba(255, 255, 255, 0.13);
+    --final-blue: #91aaff;
+    --final-cyan: #77d0db;
+    --final-green: #68cfb6;
+    --final-purple: #aaa3ff;
+    --final-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+  }
+}
+
+body.pro-body {
+  color: var(--final-ink);
+  background:
+    radial-gradient(circle at 12% -12%, rgba(49, 86, 200, 0.10), transparent 24rem),
+    radial-gradient(circle at 92% 4%, rgba(64, 159, 189, 0.08), transparent 22rem),
+    var(--final-bg);
+}
+
+p,
+.lead,
+.pro-capability-list span,
+.pro-process-grid p,
+.pro-app-card small {
+  color: var(--final-muted);
+}
+
+.pro-hero {
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  gap: 1rem;
+  padding: 4.4rem 0 2.8rem;
+}
+
+.pro-hero-main,
+.pro-hero-side,
+.pro-feature-card,
+.pro-app-card,
+.pro-capability-list article,
+.pro-process-grid article,
+.pro-contact {
+  background: linear-gradient(145deg, rgba(255,255,255,.82), rgba(255,255,255,.56)), var(--final-card);
+  border: 1px solid var(--final-border);
+  box-shadow: var(--final-shadow);
+}
+
+@media (prefers-color-scheme: dark) {
+  .pro-hero-main,
+  .pro-hero-side,
+  .pro-feature-card,
+  .pro-app-card,
+  .pro-capability-list article,
+  .pro-process-grid article,
+  .pro-contact {
+    background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.025)), var(--final-card);
+  }
+}
+
+.pro-hero-main,
+.pro-hero-side {
+  min-height: 400px;
+  border-radius: 28px;
+}
+
+.pro-hero-main {
+  padding: clamp(1.55rem, 3vw, 2.65rem);
+}
+
+.pro-hero-side {
+  padding: clamp(1.1rem, 2vw, 1.55rem);
+}
+
+.pro-hero-main h1 {
+  font-size: clamp(2.05rem, 3.65vw, 3.35rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  max-width: 600px;
+}
+
+.pro-hero-main .lead {
+  max-width: 560px;
+  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
+  line-height: 1.65;
+}
+
+.eyebrow,
+.card-kicker,
+.small-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--final-blue);
+}
+
+.button {
+  min-height: 2.55rem;
+  padding: 0.66rem 0.98rem;
+  font-size: 0.9rem;
+}
+
+.button.primary,
+.brand-mark {
+  background: linear-gradient(135deg, var(--final-blue), var(--final-cyan));
+}
+
+.pro-section {
+  padding: 4rem 0;
+}
+
+.pro-section-heading {
+  max-width: 680px;
+  margin-bottom: 1.1rem;
+}
+
+.pro-section-heading h2 {
+  font-size: clamp(1.45rem, 2.45vw, 2.1rem);
+  line-height: 1.16;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.65rem;
+}
+
+.pro-section-heading p {
+  font-size: 0.96rem;
+  max-width: 600px;
+}
+
+.pro-feature-grid {
+  gap: 1rem;
+}
+
+.pro-feature-card {
+  min-height: 285px;
+  border-radius: 24px;
+  padding: clamp(1.1rem, 2vw, 1.55rem);
+}
+
+.pro-feature-card h3 {
+  font-size: clamp(1.18rem, 1.8vw, 1.48rem);
+  line-height: 1.18;
+}
+
+.pro-feature-card p {
+  font-size: 0.95rem;
+  line-height: 1.62;
+}
+
+.pro-feature-card:hover,
+.pro-app-card:hover,
+.pro-capability-list article:hover,
+.pro-process-grid article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(29, 34, 45, 0.12);
+}
+
+.pro-app-icon {
+  width: 3.15rem;
+  height: 3.15rem;
+  border-radius: 15px;
+  font-size: 1.16rem;
+}
+
+.pro-app-grid {
+  gap: 0.8rem;
+}
+
+.pro-app-card {
+  min-height: 155px;
+  border-radius: 20px;
+  padding: 0.9rem;
+}
+
+.pro-app-card strong {
+  margin-top: 0.65rem;
+  font-size: 0.94rem;
+  line-height: 1.25;
+}
+
+.pro-app-card small {
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.pro-split {
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 1rem;
+}
+
+.pro-capability-list,
+.pro-process-grid {
+  gap: 0.75rem;
+}
+
+.pro-capability-list article,
+.pro-process-grid article {
+  border-radius: 20px;
+  padding: 0.95rem;
+}
+
+.pro-capability-list strong,
+.pro-process-grid strong {
+  font-size: 0.95rem;
+}
+
+.pro-capability-list span,
+.pro-process-grid p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.pro-process-grid span {
+  margin-bottom: 0.65rem;
+  color: var(--final-blue);
+}
+
+.pro-contact {
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;
+  border-radius: 28px;
+  padding: clamp(1.3rem, 2.5vw, 2rem);
+}
+
+.pro-contact h2 {
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+}
+
+.pro-contact p {
+  font-size: 0.96rem;
+}
+
+.profile-mini-photo {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.side-metric-list div {
+  padding: 0.85rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.38);
+  border-color: var(--final-border);
+}
+
+.side-metric-list strong {
+  font-size: 0.95rem;
+}
+
+.side-metric-list span,
+.profile-mini span {
+  color: var(--final-soft);
+}
+
+.solira-icon { background: linear-gradient(135deg, var(--final-green), var(--final-blue)); }
+.code-icon { background: linear-gradient(135deg, #252833, var(--final-purple)); }
+.guide-icon { background: linear-gradient(135deg, #c78b3a, #c96580); }
+.audio-icon { background: linear-gradient(135deg, var(--final-purple), var(--final-blue)); }
+.store-icon { background: linear-gradient(135deg, var(--final-blue), var(--final-cyan)); }
+
+@media (max-width: 920px) {
+  .pro-hero-main,
+  .pro-hero-side {
+    min-height: auto;
+  }
+
+  .pro-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .pro-hero {
+    padding-top: 3.2rem;
+  }
+
+  .pro-hero-main h1 {
+    font-size: clamp(1.95rem, 9vw, 2.75rem);
+  }
+
+  .pro-section {
+    padding: 3.25rem 0;
+  }
+}
