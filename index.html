@@ -8,9 +8,8 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="overrides.css" />
   <link rel="stylesheet" href="professional-theme.css" />
-  <link rel="stylesheet" href="pro-site.css" />
-  <link rel="stylesheet" href="final-polish.css" />
   <link rel="stylesheet" href="appstore-icons.css" />
+  <link rel="stylesheet" href="app-detail.css" />
   <script src="site.js" defer></script>
 </head>
 <body class="pro-body">
@@ -96,16 +95,63 @@
 
     <section id="apps" class="shell pro-section reveal-section">
       <div class="pro-section-heading compact-heading">
-        <p class="eyebrow">App Store</p>
-        <h2>Published apps</h2>
-        <p>Each app opens a dedicated product page with description, technologies, icon, and App Store link.</p>
+        <p class="eyebrow">Published apps</p>
+        <h2>App Store products</h2>
+        <p>Each published app has its own product page with a full description, technologies, App Store link, and real App Store icon where available.</p>
       </div>
 
-      <div id="published-apps" class="published-app-grid" data-developer-id="1501855480" aria-live="polite">
-        <a class="published-app-card loading-card" href="https://apps.apple.com/ca/developer/ashkan-zanjani/id1501855480">
-          <span class="published-app-icon skeleton-icon"></span>
-          <span><strong>Loading App Store apps</strong><small>Opening official developer profile if the app list is unavailable.</small></span>
-        </a>
+      <div class="app-product-grid">
+        <article class="app-product-card">
+          <img class="app-card-icon app-store-artwork" data-app-id="6762309864" src="assets/profile.svg" alt="Watch Audio Player app icon" />
+          <div>
+            <p class="card-kicker">watchOS · Audio</p>
+            <h3>Watch Audio Player</h3>
+            <p>Audio playback experience for Apple Watch with simple controls, file handling, and compact watch-first presentation.</p>
+          </div>
+          <div class="pro-link-row">
+            <a href="apps/watch-audio-player.html">Product page</a>
+            <a href="https://apps.apple.com/tr/app/watch-audio-player/id6762309864">App Store</a>
+          </div>
+        </article>
+
+        <article class="app-product-card">
+          <img class="app-card-icon app-store-artwork" data-app-id="6753948436" src="assets/profile.svg" alt="Converter One app icon" />
+          <div>
+            <p class="card-kicker">Utility · Conversion</p>
+            <h3>Converter One</h3>
+            <p>Conversion utility designed for quick input, readable results, and everyday calculation workflows.</p>
+          </div>
+          <div class="pro-link-row">
+            <a href="apps/converter-one.html">Product page</a>
+            <a href="https://apps.apple.com/tr/app/converter-one/id6753948436">App Store</a>
+          </div>
+        </article>
+
+        <article class="app-product-card">
+          <img class="app-card-icon app-store-artwork" data-app-id="6749022797" src="assets/profile.svg" alt="BMI Checker Plus app icon" />
+          <div>
+            <p class="card-kicker">Health Utility · BMI</p>
+            <h3>BMI Checker Plus</h3>
+            <p>Simple BMI utility with clear input, fast results, readable categories, and non-diagnostic health presentation.</p>
+          </div>
+          <div class="pro-link-row">
+            <a href="apps/bmi-checker-plus.html">Product page</a>
+            <a href="https://apps.apple.com/tr/app/bmi-checker-plus/id6749022797">App Store</a>
+          </div>
+        </article>
+
+        <article class="app-product-card">
+          <img class="app-card-icon app-store-artwork" data-app-id="6738957040" src="assets/profile.svg" alt="World Guide App icon" />
+          <div>
+            <p class="card-kicker">Travel · Maps</p>
+            <h3>World Guide App</h3>
+            <p>Travel and city guide experience with structured destination content, attraction pages, and mobile browsing flow.</p>
+          </div>
+          <div class="pro-link-row">
+            <a href="apps/world-guide-app.html">Product page</a>
+            <a href="https://apps.apple.com/tr/app/world-guide-app/id6738957040">App Store</a>
+          </div>
+        </article>
       </div>
     </section>
 
