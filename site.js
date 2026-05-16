@@ -3,6 +3,7 @@ const topbar = document.querySelector('.topbar');
 const progress = document.querySelector('.scroll-progress');
 const sections = document.querySelectorAll('.reveal-section');
 const publishedAppsContainer = document.querySelector('#published-apps');
+const appArtworkImages = document.querySelectorAll('.app-store-artwork[data-app-id]');
 
 const appStoreApps = [
   {
@@ -10,6 +11,7 @@ const appStoreApps = [
     name: 'Watch Audio Player',
     subtitle: 'Audio player for Apple Watch',
     url: 'https://apps.apple.com/tr/app/watch-audio-player/id6762309864',
+    page: 'apps/watch-audio-player.html',
     fallbackClass: 'audio-icon',
     initials: 'W'
   },
@@ -18,6 +20,7 @@ const appStoreApps = [
     name: 'Converter One',
     subtitle: 'Unit and daily converter',
     url: 'https://apps.apple.com/tr/app/converter-one/id6753948436',
+    page: 'apps/converter-one.html',
     fallbackClass: 'store-icon',
     initials: 'C'
   },
@@ -26,6 +29,7 @@ const appStoreApps = [
     name: 'BMI Checker Plus',
     subtitle: 'BMI and health utility',
     url: 'https://apps.apple.com/tr/app/bmi-checker-plus/id6749022797',
+    page: 'apps/bmi-checker-plus.html',
     fallbackClass: 'solira-icon',
     initials: 'B'
   },
@@ -34,6 +38,7 @@ const appStoreApps = [
     name: 'World Guide App',
     subtitle: 'Travel and city guide',
     url: 'https://apps.apple.com/tr/app/world-guide-app/id6738957040',
+    page: 'apps/world-guide-app.html',
     fallbackClass: 'guide-icon',
     initials: 'W'
   }
@@ -83,7 +88,7 @@ const renderAppCards = (apps) => {
       : `<span class="published-app-icon ${escapeHtml(app.fallbackClass || 'store-icon')}">${escapeHtml(app.initials || 'A')}</span>`;
 
     return `
-      <a class="published-app-card" href="${escapeHtml(app.url)}">
+      <a class="published-app-card" href="${escapeHtml(app.page || app.url)}">
         ${icon}
         <span>
           <strong>${escapeHtml(app.name)}</strong>
@@ -135,6 +140,25 @@ const loadPublishedApps = async () => {
   }
 };
 
+const hydrateAppArtwork = async () => {
+  if (!appArtworkImages.length) return;
+
+  await Promise.allSettled(Array.from(appArtworkImages).map(async (image) => {
+    const app = appStoreApps.find((candidate) => candidate.id === image.dataset.appId);
+    if (!app) return;
+
+    try {
+      const appData = await fetchAppStoreApp(app);
+      if (appData.icon) {
+        image.src = appData.icon;
+        image.alt = `${appData.name} app icon`;
+      }
+    } catch (error) {
+      image.alt = `${app.name} app icon`;
+    }
+  }));
+};
+
 window.addEventListener('scroll', () => {
   updateGlass();
   revealSections();
@@ -143,3 +167,4 @@ window.addEventListener('scroll', () => {
 updateGlass();
 revealSections();
 loadPublishedApps();
+hydrateAppArtwork();
