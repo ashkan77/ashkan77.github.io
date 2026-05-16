@@ -8,142 +8,152 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="overrides.css" />
   <link rel="stylesheet" href="professional-theme.css" />
+  <link rel="stylesheet" href="pro-site.css" />
   <script src="site.js" defer></script>
 </head>
-<body>
+<body class="pro-body">
   <div class="scroll-progress" aria-hidden="true"></div>
   <div class="liquid-scroll-field" aria-hidden="true"></div>
 
-  <header class="topbar">
-    <a class="brand" href="index.html" aria-label="Ashkan Zanjani home">
+  <header class="topbar pro-nav">
+    <a class="brand pro-brand" href="index.html" aria-label="Ashkan Zanjani home">
       <img class="brand-photo" src="assets/profile.svg" alt="" />
       <span>Ashkan Zanjani</span>
     </a>
     <nav class="nav" aria-label="Primary navigation">
-      <a href="#work">Work</a>
+      <a href="#selected-work">Work</a>
       <a href="#apps">Apps</a>
-      <a href="#profile">Profile</a>
+      <a href="#services">Expertise</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero shell">
-      <div class="hero-content glass-panel">
-        <p class="eyebrow">iOS · watchOS · SwiftUI Developer</p>
-        <h1>Polished software experiences for iPhone, Apple Watch, and Mac.</h1>
-        <p class="lead">I design and build production-ready apps with precise interface systems, privacy-aware architecture, accessibility, and strong App Store presentation.</p>
+    <section class="pro-hero shell">
+      <div class="pro-hero-main glass-panel">
+        <p class="eyebrow">iOS · watchOS · macOS · SwiftUI</p>
+        <h1>Product-focused software for Apple devices.</h1>
+        <p class="lead">I design and build polished applications with thoughtful product structure, precise interface systems, accessibility, privacy-aware architecture, and strong App Store presentation.</p>
         <div class="actions">
-          <a class="button primary" href="#work">View work</a>
-          <a class="button secondary" href="https://apps.apple.com/ca/developer/ashkan-zanjani/id1501855480">App Store profile</a>
+          <a class="button primary" href="#selected-work">Explore work</a>
+          <a class="button secondary" href="https://apps.apple.com/ca/developer/ashkan-zanjani/id1501855480">Open App Store profile</a>
         </div>
       </div>
 
-      <aside class="hero-board glass-panel" aria-label="Featured work preview">
-        <div class="board-header">
-          <span class="small-label">Current focus</span>
-          <strong>Product design, engineering, and release quality</strong>
+      <aside class="pro-hero-side glass-panel" aria-label="Developer profile summary">
+        <div class="profile-mini">
+          <img class="profile-mini-photo" src="assets/profile.svg" alt="Ashkan Zanjani" />
+          <div>
+            <span>Computer Engineer</span>
+            <strong>Ashkan Zanjani</strong>
+          </div>
         </div>
-        <div class="board-stack">
-          <a class="board-item" href="projects/solira-health.html">
-            <span class="icon-app solira-icon">S</span>
-            <span><strong>Solira Health</strong><small>Health companion · SwiftUI · watchOS</small></span>
-          </a>
-          <a class="board-item" href="projects/code-ide.html">
-            <span class="icon-app code-icon">C</span>
-            <span><strong>Code IDE</strong><small>Developer tool · macOS · Interface systems</small></span>
-          </a>
-          <a class="board-item" href="https://apps.apple.com/ca/developer/ashkan-zanjani/id1501855480">
-            <span class="icon-app store-icon">A</span>
-            <span><strong>App Store</strong><small>Official developer profile</small></span>
-          </a>
+        <div class="side-metric-list">
+          <div><span>Focus</span><strong>iOS, watchOS, macOS</strong></div>
+          <div><span>Core tools</span><strong>SwiftUI, Xcode, StoreKit</strong></div>
+          <div><span>Delivery</span><strong>Design · Build · Release</strong></div>
         </div>
       </aside>
     </section>
 
-    <section id="work" class="shell section-block reveal-section">
-      <div class="section-heading">
-        <p class="eyebrow">Featured work</p>
-        <h2>Flagship products</h2>
-        <p>Public product pages for private codebases. The site presents product direction, support, privacy, and release-facing information without exposing source code.</p>
+    <section id="selected-work" class="shell pro-section reveal-section">
+      <div class="pro-section-heading">
+        <p class="eyebrow">Selected work</p>
+        <h2>Flagship products and case studies</h2>
+        <p>Private codebases presented through public product pages, support links, privacy pages, and release-facing material.</p>
       </div>
 
-      <div class="flagship-grid">
-        <article class="flagship-card solira-card">
-          <div class="icon-app solira-icon">S</div>
+      <div class="pro-feature-grid">
+        <article class="pro-feature-card pro-feature-primary">
+          <div class="pro-app-icon solira-icon">S</div>
           <div>
             <p class="card-kicker">Health · SwiftUI · watchOS</p>
             <h3>Solira Health</h3>
-            <p>Privacy-first health companion direction with calm guidance, HealthKit-aware product thinking, accessibility, widgets, and a premium user experience.</p>
-            <div class="text-links">
-              <a href="projects/solira-health.html">Case study</a>
-              <a href="support/solira-health.html">Support</a>
-              <a href="privacy/solira-health.html">Privacy</a>
-            </div>
+            <p>A privacy-first health companion direction with clear insights, careful safety language, accessible interface structure, widgets, and watchOS companion planning.</p>
+          </div>
+          <div class="pro-link-row">
+            <a href="projects/solira-health.html">Case study</a>
+            <a href="support/solira-health.html">Support</a>
+            <a href="privacy/solira-health.html">Privacy</a>
           </div>
         </article>
 
-        <article class="flagship-card code-card">
-          <div class="icon-app code-icon">C</div>
+        <article class="pro-feature-card pro-feature-secondary">
+          <div class="pro-app-icon code-icon">C</div>
           <div>
-            <p class="card-kicker">Developer tools · macOS · Interface systems</p>
+            <p class="card-kicker">Developer tools · macOS</p>
             <h3>Code IDE</h3>
-            <p>Modern developer tool concept with a refined editor shell, clear navigation, strong hierarchy, and focused productivity flows.</p>
-            <div class="text-links">
-              <a href="projects/code-ide.html">Case study</a>
-            </div>
+            <p>A developer tool concept shaped around a focused editor shell, command structure, file navigation, and a calm workspace for professional coding flows.</p>
+          </div>
+          <div class="pro-link-row">
+            <a href="projects/code-ide.html">Case study</a>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="apps" class="shell section-block soft-section reveal-section">
-      <div class="section-heading narrow">
-        <p class="eyebrow">Apps</p>
-        <h2>App Store and product links</h2>
-        <p>App icons below act as quick links. Exact App Store icons can be swapped in when each individual app URL is available.</p>
+    <section id="apps" class="shell pro-section reveal-section">
+      <div class="pro-section-heading compact-heading">
+        <p class="eyebrow">Apps and links</p>
+        <h2>Product shortcuts</h2>
+        <p>Each card is prepared as a product entry. Published App Store links can be attached per app as soon as individual URLs are available.</p>
       </div>
 
-      <div class="app-links-grid">
-        <a class="app-link-card" href="https://apps.apple.com/ca/developer/ashkan-zanjani/id1501855480">
-          <span class="icon-app store-icon">A</span>
+      <div class="pro-app-grid">
+        <a class="pro-app-card" href="https://apps.apple.com/ca/developer/ashkan-zanjani/id1501855480">
+          <span class="pro-app-icon store-icon">A</span>
           <span><strong>App Store Profile</strong><small>Official developer page</small></span>
         </a>
-        <a class="app-link-card" href="projects/solira-health.html">
-          <span class="icon-app solira-icon">S</span>
-          <span><strong>Solira Health</strong><small>Flagship health product</small></span>
+        <a class="pro-app-card" href="projects/solira-health.html">
+          <span class="pro-app-icon solira-icon">S</span>
+          <span><strong>Solira Health</strong><small>Health product case study</small></span>
         </a>
-        <a class="app-link-card" href="projects/code-ide.html">
-          <span class="icon-app code-icon">C</span>
-          <span><strong>Code IDE</strong><small>Developer tool concept</small></span>
+        <a class="pro-app-card" href="projects/code-ide.html">
+          <span class="pro-app-icon code-icon">C</span>
+          <span><strong>Code IDE</strong><small>Developer tool case study</small></span>
         </a>
-        <a class="app-link-card" href="projects/world-guide.html">
-          <span class="icon-app guide-icon">W</span>
-          <span><strong>World Guide App</strong><small>Travel and city guide</small></span>
+        <a class="pro-app-card" href="projects/world-guide.html">
+          <span class="pro-app-icon guide-icon">W</span>
+          <span><strong>World Guide App</strong><small>Travel guide project</small></span>
         </a>
-        <a class="app-link-card" href="projects/watchaudio.html">
-          <span class="icon-app audio-icon">A</span>
-          <span><strong>WatchAudio</strong><small>watchOS audio experience</small></span>
+        <a class="pro-app-card" href="projects/watchaudio.html">
+          <span class="pro-app-icon audio-icon">A</span>
+          <span><strong>WatchAudio</strong><small>watchOS audio project</small></span>
         </a>
       </div>
     </section>
 
-    <section id="profile" class="shell section-block approach-grid reveal-section">
-      <div class="section-heading compact">
-        <p class="eyebrow">Profile</p>
-        <h2>Product strategy, interface design, and reliable engineering.</h2>
+    <section id="services" class="shell pro-section pro-split reveal-section">
+      <div class="pro-section-heading sticky-copy">
+        <p class="eyebrow">Expertise</p>
+        <h2>From interface concept to release-ready product.</h2>
+        <p>I focus on practical product work: structure, screens, flows, accessibility, store-facing pages, and implementation details that make a project feel reliable.</p>
       </div>
-      <div class="principle-list">
-        <article><strong>Product-grade interface design</strong><p>Interfaces are structured around hierarchy, restraint, readable typography, and clear interaction paths.</p></article>
-        <article><strong>Private source, public story</strong><p>Code remains private while the website communicates product value, trust, support, and release readiness.</p></article>
-        <article><strong>Quality before decoration</strong><p>Design decisions prioritize clarity, accessibility, performance, and polished launch presentation over visual noise.</p></article>
+      <div class="pro-capability-list">
+        <article><strong>Product interface design</strong><span>Clear hierarchy, restrained typography, reusable visual systems, and interaction flows that feel intentional.</span></article>
+        <article><strong>SwiftUI implementation</strong><span>Production-minded screens, state-driven UI, reusable components, and maintainable architecture.</span></article>
+        <article><strong>App Store readiness</strong><span>Support pages, privacy pages, release notes, screenshots, product positioning, and review-safe language.</span></article>
+        <article><strong>Health and wearable experiences</strong><span>Careful health communication, watchOS companion planning, widgets, and privacy-aware user experiences.</span></article>
       </div>
     </section>
 
-    <section id="contact" class="shell contact-panel glass-panel reveal-section">
+    <section class="shell pro-section reveal-section">
+      <div class="pro-section-heading compact-heading">
+        <p class="eyebrow">Process</p>
+        <h2>How I approach product work</h2>
+      </div>
+      <div class="pro-process-grid">
+        <article><span>01</span><strong>Define</strong><p>Clarify the product goal, user need, core screens, risk areas, and App Store position.</p></article>
+        <article><span>02</span><strong>Design</strong><p>Build a restrained visual system, screen hierarchy, states, and responsive layouts.</p></article>
+        <article><span>03</span><strong>Engineer</strong><p>Implement with SwiftUI, native frameworks, stable navigation, and clean component structure.</p></article>
+        <article><span>04</span><strong>Release</strong><p>Prepare support, privacy, metadata, screenshots, QA notes, and release evidence.</p></article>
+      </div>
+    </section>
+
+    <section id="contact" class="shell pro-contact glass-panel reveal-section">
       <div>
         <p class="eyebrow">Contact</p>
-        <h2>Let’s build something production-ready.</h2>
+        <h2>Let’s build a serious product.</h2>
         <p>For iOS, watchOS, SwiftUI, product design, or App Store-ready app work, reach out directly.</p>
       </div>
       <div class="actions">
