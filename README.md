@@ -16,7 +16,7 @@ https://apps.apple.com/ca/developer/ashkan-zanjani/id1501855480
 
 ## Purpose
 
-This website presents selected Apple-platform projects, App Store-facing links, support pages, privacy pages, and public case studies without exposing private source code.
+This website presents selected Apple-platform projects, App Store-facing links, support pages, a shared app privacy policy, and public case studies without exposing private source code.
 
 ## Current homepage focus
 
@@ -37,7 +37,8 @@ projects/solira-health.html   Solira Health case study
 projects/code-ide.html        Code IDE case study
 projects/world-guide.html     World Guide App case study
 projects/watchaudio.html      WatchAudio case study
-privacy/solira-health.html    Solira Health privacy policy page
+privacy/index.html            Shared app privacy policy for App Store privacy URL use
+privacy/solira-health.html    Legacy redirect to the shared privacy policy
 support/solira-health.html    Solira Health support page
 ```
 
@@ -54,6 +55,7 @@ Private code repositories should remain separate and private. This public reposi
 ## Notes
 
 - Source code for apps should not be committed here.
-- App Store privacy and support pages should be reviewed before final submission.
+- App Store privacy labels should still be reviewed separately for each app.
+- The shared privacy page can be used as the general App Store privacy policy URL when it accurately covers the app's behavior.
 - Project pages are public case studies, not full code documentation.
 - App-specific App Store download links can be added when individual app URLs are available.
