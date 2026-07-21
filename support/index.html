@@ -3,109 +3,239 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Support center for apps and projects published by Ashkan Zanjani." />
-  <title>App Support Center — Ashkan Zanjani</title>
+  <meta name="description" content="Product-specific support for LocalML, Watch Audio Player, Converter One, BMI Checker Plus, World Guide App, and Solira Health." />
+  <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)" />
+  <title>Support Center — Ashkan Zanjani</title>
   <link rel="canonical" href="https://ashkan77.github.io/support/" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../overrides.css" />
   <link rel="stylesheet" href="../professional-theme.css" />
   <link rel="stylesheet" href="../app-detail.css" />
+  <link rel="stylesheet" href="../center-pages.css" />
   <script src="../site.js" defer></script>
 </head>
-<body class="pro-body">
+<body class="pro-body center-page support-center-page">
+  <a class="center-skip-link" href="#main-content">Skip to app support</a>
   <div class="scroll-progress" aria-hidden="true"></div>
   <div class="liquid-scroll-field" aria-hidden="true"></div>
 
-  <header class="site-header pro-nav">
-    <a class="brand pro-brand" href="../index.html"><img class="brand-photo" src="../assets/profile.svg" alt="" /><span>Ashkan Zanjani</span></a>
+  <header class="site-header topbar pro-nav">
+    <a class="brand pro-brand" href="../index.html" aria-label="Ashkan Zanjani home">
+      <img class="brand-photo" src="../assets/profile.svg" alt="" />
+      <span>Ashkan Zanjani</span>
+    </a>
     <nav class="nav" aria-label="Primary navigation">
       <a href="../index.html#selected-work">Work</a>
       <a href="../index.html#apps">Apps</a>
       <a href="../privacy/">Privacy</a>
+      <a href="./" aria-current="page">Support</a>
       <a href="../index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section class="section-shell page-hero reveal-section">
-      <p class="eyebrow">Support Center</p>
-      <h1>Support for every app.</h1>
-      <p class="hero-text">Choose an app below for troubleshooting, contact details, privacy information, and product-specific guidance. Support is available in English and Turkish.</p>
-      <div class="actions">
+  <main id="main-content">
+    <section class="center-hero shell" aria-labelledby="support-title">
+      <div class="center-surface center-hero-copy reveal-section">
+        <p class="eyebrow">Support Center</p>
+        <h1 id="support-title">Support that starts with the right product.</h1>
+        <p class="lead">Choose an app for focused troubleshooting, permission guidance, privacy information, purchase notes, and the details needed for a useful support request.</p>
+        <div class="center-hero-actions">
+          <a class="button primary" href="#app-support">Choose an app</a>
+          <a class="button secondary" href="mailto:azanjani@me.com?subject=App%20Support">Email support</a>
+        </div>
+        <div class="center-hero-note">Support is available in English and Turkish. Sensitive information should be removed before sending.</div>
+      </div>
+
+      <aside class="center-surface center-hero-aside reveal-section" aria-labelledby="support-route-title">
+        <div class="center-aside-heading">
+          <div>
+            <h2 id="support-route-title">The fastest support route</h2>
+            <p>A clear report makes it easier to reproduce the issue and provide a useful answer.</p>
+          </div>
+          <div class="center-aside-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H11l-4.7 4v-4A2.5 2.5 0 0 1 4 13.5v-8Z" />
+              <path d="M8 8h8M8 11.5h5" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="center-principle-list">
+          <div class="center-principle">
+            <span class="center-principle-index">01</span>
+            <div><strong>Select the app</strong><span>Open the product-specific page before sending a general email.</span></div>
+          </div>
+          <div class="center-principle">
+            <span class="center-principle-index">02</span>
+            <div><strong>Include reproducible details</strong><span>App version, device, operating system, exact steps, and the visible result.</span></div>
+          </div>
+          <div class="center-principle">
+            <span class="center-principle-index">03</span>
+            <div><strong>Protect private information</strong><span>Redact health data, documents, passwords, payment details, and identifying screenshots.</span></div>
+          </div>
+        </div>
+
+        <div class="center-aside-meta"><span>6 product support pages</span><span>English · Turkish</span></div>
+      </aside>
+    </section>
+
+    <section id="app-support" class="center-section shell reveal-section" aria-labelledby="app-support-title">
+      <div class="center-section-heading">
+        <div class="center-section-heading-copy">
+          <p class="eyebrow">Product support</p>
+          <h2 id="app-support-title">Choose the product that needs attention.</h2>
+          <p>Each support page covers the most relevant troubleshooting steps, privacy link, App Store information, and what to include when reporting a problem.</p>
+        </div>
+        <span class="center-section-count">6 support pages</span>
+      </div>
+
+      <article class="center-app-card center-featured-card" aria-labelledby="localml-support-title">
+        <div class="center-featured-visual">
+          <div class="center-app-icon localml-icon" aria-hidden="true">L</div>
+          <div class="center-featured-label">Apple-native intelligence workspace<br />In development</div>
+        </div>
+        <div class="center-featured-content">
+          <div class="center-app-topline"><span class="center-status">Upcoming product</span></div>
+          <h3 id="localml-support-title">LocalML</h3>
+          <p>Help with intelligence availability, conversations, documents, visual context, voice, projects, memory, local storage, exports, permissions, and privacy controls.</p>
+          <div class="center-fact-row" aria-label="LocalML support areas">
+            <div class="center-fact"><strong>Intelligence</strong><span>Availability, language, resources, and device support.</span></div>
+            <div class="center-fact"><strong>Workspace</strong><span>Chats, projects, documents, voice, and artifacts.</span></div>
+            <div class="center-fact"><strong>Local data</strong><span>Storage, deletion, permissions, and diagnostics.</span></div>
+          </div>
+          <div class="center-card-actions">
+            <a class="center-action-primary" href="localml.html">Open LocalML Support</a>
+            <a class="center-action-secondary" href="../privacy/localml.html">Privacy</a>
+            <a class="center-action-secondary" href="../apps/localml.html">Product page</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="center-app-grid">
+        <article class="center-app-card app-theme-audio" aria-labelledby="watch-audio-support-title">
+          <div class="center-card-header">
+            <img class="center-app-icon app-store-artwork" data-app-id="6762309864" src="../assets/profile.svg" alt="Watch Audio Player app icon" />
+            <span class="center-status">Published</span>
+          </div>
+          <div class="center-card-copy">
+            <h3 id="watch-audio-support-title">Watch Audio Player</h3>
+            <p>Audio transfer, Apple Watch connectivity, playback, file compatibility, local storage, offline listening, purchases, and Family Sharing.</p>
+          </div>
+          <div class="center-card-focus">Best report: iPhone and Watch models, iOS/watchOS versions, file type, file size, and the failed step.</div>
+          <div class="center-card-actions">
+            <a class="center-action-primary" href="watch-audio-player.html">Open Support</a>
+            <a class="center-action-secondary" href="../privacy/watch-audio-player.html">Privacy</a>
+          </div>
+        </article>
+
+        <article class="center-app-card app-theme-converter" aria-labelledby="converter-support-title">
+          <div class="center-card-header">
+            <img class="center-app-icon app-store-artwork" data-app-id="6753948436" src="../assets/profile.svg" alt="Converter One app icon" />
+            <span class="center-status">Published</span>
+          </div>
+          <div class="center-card-copy">
+            <h3 id="converter-support-title">Converter One</h3>
+            <p>Unexpected results, source and target units, regional formatting, decimal separators, search, favorites, settings, and offline use.</p>
+          </div>
+          <div class="center-card-focus">Best report: entered value, both units, displayed result, expected result, region, and app version.</div>
+          <div class="center-card-actions">
+            <a class="center-action-primary" href="converter-one.html">Open Support</a>
+            <a class="center-action-secondary" href="../privacy/converter-one.html">Privacy</a>
+          </div>
+        </article>
+
+        <article class="center-app-card app-theme-bmi" aria-labelledby="bmi-support-title">
+          <div class="center-card-header">
+            <img class="center-app-icon app-store-artwork" data-app-id="6749022797" src="../assets/profile.svg" alt="BMI Checker Plus app icon" />
+            <span class="center-status">Published</span>
+          </div>
+          <div class="center-card-copy">
+            <h3 id="bmi-support-title">BMI Checker Plus</h3>
+            <p>BMI calculations, measurement units, history, Apple Health permissions, hydration, notifications, widgets, exports, and optional sync behavior.</p>
+          </div>
+          <div class="center-card-focus">Health note: the app is a general utility and does not provide diagnosis or treatment.</div>
+          <div class="center-card-actions">
+            <a class="center-action-primary" href="bmi-checker-plus.html">Open Support</a>
+            <a class="center-action-secondary" href="../privacy/bmi-checker-plus.html">Privacy</a>
+          </div>
+        </article>
+
+        <article class="center-app-card app-theme-guide" aria-labelledby="guide-support-title">
+          <div class="center-card-header">
+            <img class="center-app-icon app-store-artwork" data-app-id="6738957040" src="../assets/profile.svg" alt="World Guide App icon" />
+            <span class="center-status">Published</span>
+          </div>
+          <div class="center-card-copy">
+            <h3 id="guide-support-title">World Guide App</h3>
+            <p>Destination content, maps, weather, images, optional location, favorites, network access, and time-sensitive travel information.</p>
+          </div>
+          <div class="center-card-focus">Best report: destination, affected feature, connection type, permission status, and a redacted screenshot.</div>
+          <div class="center-card-actions">
+            <a class="center-action-primary" href="world-guide-app.html">Open Support</a>
+            <a class="center-action-secondary" href="../privacy/world-guide-app.html">Privacy</a>
+          </div>
+        </article>
+
+        <article class="center-app-card app-theme-solira" aria-labelledby="solira-support-title">
+          <div class="center-card-header">
+            <div class="center-app-icon solira-icon" aria-hidden="true">S</div>
+            <span class="center-status">In development</span>
+          </div>
+          <div class="center-card-copy">
+            <h3 id="solira-support-title">Solira Health</h3>
+            <p>Apple Health permissions, health logs, reminders, widgets, voice, assistant review flows, local data, safety guidance, and privacy controls.</p>
+          </div>
+          <div class="center-card-focus">Health note: remove private medical details from screenshots and support messages.</div>
+          <div class="center-card-actions">
+            <a class="center-action-primary" href="solira-health.html">Open Support</a>
+            <a class="center-action-secondary" href="../privacy/solira-health.html">Privacy</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="center-guidance shell reveal-section" aria-labelledby="support-guidance-title">
+      <div class="center-guidance-heading">
+        <p class="eyebrow">Before you send</p>
+        <h2 id="support-guidance-title">A useful report is specific and safe.</h2>
+        <p>These three checks reduce follow-up questions and help protect your information.</p>
+      </div>
+      <div class="center-guidance-grid">
+        <article class="center-guidance-item">
+          <span class="center-guidance-number">01</span>
+          <h3>Describe the exact path</h3>
+          <p>Write the steps in order, what appeared, what you expected, and whether the issue happens every time.</p>
+        </article>
+        <article class="center-guidance-item">
+          <span class="center-guidance-number">02</span>
+          <h3>Include the environment</h3>
+          <p>Add the app version, device model, operating-system version, permission state, and relevant file or unit details.</p>
+        </article>
+        <article class="center-guidance-item">
+          <span class="center-guidance-number">03</span>
+          <h3>Remove sensitive content</h3>
+          <p>Do not send passwords, payment card information, private documents, personal audio, or unnecessary health information.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="center-contact shell reveal-section" aria-labelledby="support-contact-title">
+      <div class="center-contact-copy">
+        <p class="eyebrow">Direct support</p>
+        <h2 id="support-contact-title">Still need help after checking the app page?</h2>
+        <p>Use the app name in the email subject and include a concise, reproducible description. App Store payments, refunds, and purchase history are managed by Apple.</p>
+      </div>
+      <div class="center-contact-actions">
         <a class="button primary" href="mailto:azanjani@me.com?subject=App%20Support">Email support</a>
         <a class="button secondary" href="../privacy/">Privacy Center</a>
       </div>
-    </section>
-
-    <section class="shell pro-section reveal-section">
-      <div class="pro-section-heading compact-heading">
-        <p class="eyebrow">Apps</p>
-        <h2>Choose a product</h2>
-        <p>Each page has a stable URL that can be used as the App Support URL in App Store Connect.</p>
-      </div>
-
-      <div class="app-product-grid">
-        <article class="app-product-card">
-          <div class="pro-app-icon localml-icon">L</div>
-          <div><p class="card-kicker">Upcoming · Apple intelligence</p><h3>LocalML</h3><p>Chat, documents, projects, voice, visual context, memory, and Apple-native intelligence workflows.</p></div>
-          <div class="pro-link-row"><a href="localml.html">Support</a><a href="../privacy/localml.html">Privacy</a><a href="../apps/localml.html">Product page</a></div>
-        </article>
-
-        <article class="app-product-card">
-          <img class="app-card-icon app-store-artwork" data-app-id="6762309864" src="../assets/profile.svg" alt="Watch Audio Player app icon" />
-          <div><p class="card-kicker">watchOS · Audio</p><h3>Watch Audio Player</h3><p>Help with personal audio files, transfers, playback, and Apple Watch behavior.</p></div>
-          <div class="pro-link-row"><a href="watch-audio-player.html">Support</a><a href="../privacy/watch-audio-player.html">Privacy</a><a href="../apps/watch-audio-player.html">Product page</a></div>
-        </article>
-
-        <article class="app-product-card">
-          <img class="app-card-icon app-store-artwork" data-app-id="6753948436" src="../assets/profile.svg" alt="Converter One app icon" />
-          <div><p class="card-kicker">Utility · Conversion</p><h3>Converter One</h3><p>Help with units, input, results, favorites, formatting, and app settings.</p></div>
-          <div class="pro-link-row"><a href="converter-one.html">Support</a><a href="../privacy/converter-one.html">Privacy</a><a href="../apps/converter-one.html">Product page</a></div>
-        </article>
-
-        <article class="app-product-card">
-          <img class="app-card-icon app-store-artwork" data-app-id="6749022797" src="../assets/profile.svg" alt="BMI Checker Plus app icon" />
-          <div><p class="card-kicker">Health utility · BMI</p><h3>BMI Checker Plus</h3><p>Help with calculations, history, Health permissions, reminders, widgets, and sync.</p></div>
-          <div class="pro-link-row"><a href="bmi-checker-plus.html">Support</a><a href="../privacy/bmi-checker-plus.html">Privacy</a><a href="../apps/bmi-checker-plus.html">Product page</a></div>
-        </article>
-
-        <article class="app-product-card">
-          <img class="app-card-icon app-store-artwork" data-app-id="6738957040" src="../assets/profile.svg" alt="World Guide App icon" />
-          <div><p class="card-kicker">Travel · Maps</p><h3>World Guide App</h3><p>Help with destination content, maps, weather, favorites, images, and location access.</p></div>
-          <div class="pro-link-row"><a href="world-guide-app.html">Support</a><a href="../privacy/world-guide-app.html">Privacy</a><a href="../apps/world-guide-app.html">Product page</a></div>
-        </article>
-
-        <article class="app-product-card">
-          <div class="pro-app-icon solira-icon">S</div>
-          <div><p class="card-kicker">Health · SwiftUI</p><h3>Solira Health</h3><p>Product support, health and safety guidance, permissions, privacy, and project information.</p></div>
-          <div class="pro-link-row"><a href="solira-health.html">Support</a><a href="../privacy/solira-health.html">Privacy</a><a href="../projects/solira-health.html">Case study</a></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section-shell detail-grid reveal-section">
-      <article class="detail-panel">
-        <h2>What to include</h2>
-        <p>For faster support, include the app name, app version, device model, operating system version, the steps that caused the issue, and what you expected to happen.</p>
-      </article>
-      <article class="detail-panel">
-        <h2>Protect sensitive information</h2>
-        <p>Do not email passwords, payment information, private health details, private documents, or other sensitive content. Remove personal information from screenshots whenever possible.</p>
-      </article>
-      <article class="detail-panel">
-        <h2>Purchases</h2>
-        <p>App Store payments, refunds, family sharing, and purchase history are managed by Apple. For an app-access issue, include the app name and a description, but do not send payment card details.</p>
-      </article>
-      <article class="detail-panel">
-        <h2>Contact</h2>
-        <p>Email <a href="mailto:azanjani@me.com?subject=App%20Support">azanjani@me.com</a>. Support messages are used only to understand and respond to the request.</p>
-      </article>
     </section>
   </main>
 
   <footer class="site-footer shell">
     <span>© 2026 Ashkan Zanjani</span>
-    <div><a href="../index.html">Home</a><a href="../privacy/">Privacy</a><a href="mailto:azanjani@me.com">Email</a></div>
+    <div><a href="../index.html">Home</a><a href="../privacy/">Privacy</a><a href="./" aria-current="page">Support</a><a href="mailto:azanjani@me.com">Email</a></div>
   </footer>
 </body>
 </html>

@@ -2,6 +2,7 @@
 @import url("final-polish.css");
 @import url("site-pages.css");
 @import url("responsive-polish.css");
+@import url("center-featured-card.css");
 
 :root {
   --bg: #f6f4ef;
