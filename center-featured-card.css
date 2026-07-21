@@ -19,6 +19,15 @@
     radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--app-accent-2), transparent 83%), transparent 18rem);
 }
 
+.dropclear-icon {
+  background: linear-gradient(135deg, #409fbd, #3156c8 56%, #6866d8);
+}
+
+.center-app-card.app-theme-dropclear {
+  --app-accent: #409fbd;
+  --app-accent-2: #3156c8;
+}
+
 @media (max-width: 980px) {
   .center-app-card.center-featured-card {
     grid-template-columns: 1fr;

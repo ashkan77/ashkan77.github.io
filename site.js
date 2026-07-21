@@ -7,6 +7,15 @@ const appArtworkImages = document.querySelectorAll('.app-store-artwork[data-app-
 
 const appStoreApps = [
   {
+    id: '6784929346',
+    name: 'DropClear: Water Eject',
+    subtitle: 'Speaker water-ejection utility',
+    url: 'https://apps.apple.com/tr/app/dropclear-water-eject/id6784929346',
+    page: 'apps/dropclear-water-eject.html',
+    fallbackClass: 'dropclear-icon',
+    initials: 'D'
+  },
+  {
     id: '6762309864',
     name: 'Watch Audio Player',
     subtitle: 'Audio player for Apple Watch',
