@@ -4,6 +4,8 @@ const progress = document.querySelector('.scroll-progress');
 const sections = document.querySelectorAll('.reveal-section');
 const publishedAppsContainer = document.querySelector('#published-apps');
 const appArtworkImages = document.querySelectorAll('.app-store-artwork[data-app-id]');
+const siteScriptUrl = document.currentScript?.src || window.location.href;
+const siteBaseUrl = new URL('.', siteScriptUrl);
 
 const appStoreApps = [
   {
@@ -49,6 +51,7 @@ const appStoreApps = [
     url: 'https://apps.apple.com/tr/app/world-guide-app/id6738957040',
     page: 'apps/world-guide-app.html',
     fallbackClass: 'guide-icon',
+    fallbackAsset: 'assets/world-guide-app-fallback.svg',
     initials: 'W'
   }
 ];
@@ -88,13 +91,19 @@ const escapeHtml = (value) => String(value || '').replace(/[&<>'"]/g, (character
   '"': '&quot;'
 }[character]));
 
+const getFallbackAsset = (app) => (
+  app.fallbackAsset ? new URL(app.fallbackAsset, siteBaseUrl).href : ''
+);
+
 const renderAppCards = (apps) => {
   if (!publishedAppsContainer) return;
 
   publishedAppsContainer.innerHTML = apps.map((app) => {
     const icon = app.icon
       ? `<img src="${escapeHtml(app.icon)}" alt="${escapeHtml(app.name)} app icon" loading="lazy" />`
-      : `<span class="published-app-icon ${escapeHtml(app.fallbackClass || 'store-icon')}">${escapeHtml(app.initials || 'A')}</span>`;
+      : app.fallbackAsset
+        ? `<img src="${escapeHtml(getFallbackAsset(app))}" alt="${escapeHtml(app.name)} app icon" loading="lazy" />`
+        : `<span class="published-app-icon ${escapeHtml(app.fallbackClass || 'store-icon')}">${escapeHtml(app.initials || 'A')}</span>`;
 
     return `
       <a class="published-app-card" href="${escapeHtml(app.page || app.url)}">
@@ -155,6 +164,11 @@ const hydrateAppArtwork = async () => {
   await Promise.allSettled(Array.from(appArtworkImages).map(async (image) => {
     const app = appStoreApps.find((candidate) => candidate.id === image.dataset.appId);
     if (!app) return;
+
+    const fallbackAsset = getFallbackAsset(app);
+    if (fallbackAsset) {
+      image.src = fallbackAsset;
+    }
 
     try {
       const appData = await fetchAppStoreApp(app);
