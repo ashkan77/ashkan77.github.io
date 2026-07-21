@@ -50,7 +50,18 @@ body {
 .button.primary { background: linear-gradient(135deg, var(--blue), var(--cyan)); }
 .solira-icon { background: linear-gradient(135deg, #3fc7a9, #376ad8); }
 .code-icon { background: linear-gradient(135deg, #252833, #6d6af2); }
+.localml-icon { background: linear-gradient(135deg, #3156c8, #6d6af2 52%, #38b89d); }
 .guide-icon { background: linear-gradient(135deg, #d99a46, #d96886); }
 .audio-icon { background: linear-gradient(135deg, #7d6cf2, #4b76dd); }
 .store-icon { background: linear-gradient(135deg, #2f5bd3, #4bb8d8); }
 .scroll-progress { background: linear-gradient(90deg, var(--blue), var(--cyan), var(--mint)); }
+
+.app-letter-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
