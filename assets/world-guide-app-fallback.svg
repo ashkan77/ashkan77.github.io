@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">World Guide App fallback icon</title>
+  <desc id="description">A luminous globe surrounded by location pins on a purple and blue background.</desc>
+  <defs>
+    <linearGradient id="background" x1="62" y1="36" x2="452" y2="476" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b56f79"/>
+      <stop offset="0.38" stop-color="#62627f"/>
+      <stop offset="0.72" stop-color="#273f68"/>
+      <stop offset="1" stop-color="#291b48"/>
+    </linearGradient>
+    <radialGradient id="globeFill" cx="0" cy="0" r="1" gradientTransform="translate(267 244) rotate(130) scale(141)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#55d9f2"/>
+      <stop offset="0.42" stop-color="#7b78ef"/>
+      <stop offset="0.78" stop-color="#d28ac3"/>
+      <stop offset="1" stop-color="#f3bcc0"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="135" y1="117" x2="386" y2="385" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f7fbff"/>
+      <stop offset="0.45" stop-color="#8be5ff"/>
+      <stop offset="1" stop-color="#e8b2ff"/>
+    </linearGradient>
+    <linearGradient id="baseGlow" x1="170" y1="408" x2="340" y2="408" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fa9a83" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#ffab8d"/>
+      <stop offset="0.65" stop-color="#5ce6ff"/>
+      <stop offset="1" stop-color="#5ce6ff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="ringGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="108" fill="url(#background)"/>
+  <circle cx="106" cy="112" r="98" fill="#ee8b89" opacity="0.12" filter="url(#softGlow)"/>
+  <circle cx="395" cy="122" r="112" fill="#3bb8ef" opacity="0.15" filter="url(#softGlow)"/>
+  <ellipse cx="256" cy="414" rx="128" ry="18" fill="url(#baseGlow)" opacity="0.72" filter="url(#softGlow)"/>
+  <rect x="164" y="406" width="184" height="4" rx="2" fill="url(#baseGlow)"/>
+
+  <circle cx="256" cy="249" r="139" fill="#15152c" opacity="0.88" stroke="url(#ring)" stroke-width="8" filter="url(#ringGlow)"/>
+  <circle cx="256" cy="249" r="104" fill="url(#globeFill)" stroke="#17152e" stroke-width="7"/>
+
+  <g fill="none" stroke="#17152e" stroke-width="7" stroke-linecap="round">
+    <ellipse cx="256" cy="249" rx="47" ry="103"/>
+    <ellipse cx="256" cy="249" rx="82" ry="103"/>
+    <path d="M155 249h202"/>
+    <path d="M170 205c25 13 54 19 86 19s61-6 86-19"/>
+    <path d="M170 293c25-13 54-19 86-19s61 6 86 19"/>
+  </g>
+
+  <g fill="#f8fbff" stroke="#17152e" stroke-width="7" stroke-linejoin="round">
+    <path d="M256 352c-24 0-43 18-43 41 0 31 43 65 43 65s43-34 43-65c0-23-19-41-43-41Z"/>
+    <circle cx="256" cy="393" r="12" fill="#495bd1" stroke="none"/>
+
+    <path d="M165 116c-19 0-35 15-35 34 0 26 35 53 35 53s35-27 35-53c0-19-16-34-35-34Z"/>
+    <circle cx="165" cy="150" r="9" fill="#3d4f9d" stroke="none"/>
+
+    <path d="M347 116c-19 0-35 15-35 34 0 26 35 53 35 53s35-27 35-53c0-19-16-34-35-34Z"/>
+    <circle cx="347" cy="150" r="9" fill="#3d4f9d" stroke="none"/>
+
+    <path d="M122 205c-18 0-32 14-32 32 0 24 32 49 32 49s32-25 32-49c0-18-14-32-32-32Z"/>
+    <circle cx="122" cy="237" r="8" fill="#614992" stroke="none"/>
+
+    <path d="M390 205c-18 0-32 14-32 32 0 24 32 49 32 49s32-25 32-49c0-18-14-32-32-32Z"/>
+    <circle cx="390" cy="237" r="8" fill="#345c99" stroke="none"/>
+
+    <path d="M143 304c-18 0-32 14-32 32 0 24 32 49 32 49s32-25 32-49c0-18-14-32-32-32Z"/>
+    <circle cx="143" cy="336" r="8" fill="#7a4e96" stroke="none"/>
+
+    <path d="M369 304c-18 0-32 14-32 32 0 24 32 49 32 49s32-25 32-49c0-18-14-32-32-32Z"/>
+    <circle cx="369" cy="336" r="8" fill="#3d5ca5" stroke="none"/>
+  </g>
+</svg>
