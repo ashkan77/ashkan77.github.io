@@ -31,13 +31,13 @@
       <p class="eyebrow">Privacy Policy</p>
       <h1>LocalML Privacy Policy</h1>
       <p class="hero-text">LocalML is designed as a privacy-first Apple-native workspace. This policy describes the planned data practices for LocalML 1.0 and will be reviewed before release whenever product behavior changes.</p>
-      <p class="hero-text">Last updated: July 21, 2026</p>
+      <p class="hero-text">Last updated: July 22, 2026</p>
     </section>
 
     <section class="section-shell detail-grid reveal-section">
       <article class="detail-panel">
         <h2>Summary</h2>
-        <p>LocalML is designed to keep prompts, conversations, projects, memories, imported documents, photos, audio, and generated artifacts under the user's control. LocalML 1.0 does not include advertising SDKs, third-party advertising tracking, third-party AI model providers, or CloudKit synchronization.</p>
+        <p>LocalML is designed to keep your AI workspace under your control. Core workspace data stays on your device unless you explicitly export or share it. Optional iCloud chat sync can copy the supported parts of conversations to the private CloudKit database of your Apple Account. LocalML does not use advertising SDKs, third-party advertising tracking, or third-party AI model providers.</p>
       </article>
 
       <article class="detail-panel">
@@ -53,8 +53,28 @@
 
       <article class="detail-panel">
         <h2>Local storage</h2>
-        <p>Chats, projects, project preferences, scoped memory, saved answers, imported-document metadata, generated artifacts, export history, and app settings may be stored locally on the device so the app can provide its features.</p>
-        <p>LocalML 1.0 does not include CloudKit chat or project synchronization. Removing app content through available in-app controls or deleting the app removes the corresponding local data, subject to normal operating-system backup behavior.</p>
+        <p>Chats, projects, project preferences, scoped memory, saved answers, imported-document data, generated artifacts, diagnostics, and app settings may be stored locally so LocalML can provide, recover, and delete its features. When iCloud chat sync is off, new chat changes remain on this device unless you explicitly export or share them. Turning sync off does not delete chat records already stored in iCloud.</p>
+      </article>
+
+      <article class="detail-panel">
+        <h2>Optional iCloud chat sync</h2>
+        <p>iCloud chat sync is off by default. If you enable it in <strong>Settings &gt; Data &amp; Privacy</strong> and iCloud is available, LocalML uses the private CloudKit database of your Apple Account so supported conversation data can continue across your Apple devices. The developer does not operate a separate server for this sync.</p>
+        <p><strong>What syncs:</strong> conversation and message identifiers; conversation titles and previews; message text, including sent voice transcripts and text pasted or quoted from a source; saved model-facing requests and responses; timestamps and message status; model, routing, privacy, pin, favorite, archive, read, reaction, and latency metadata; and structured answers, charts, and text/table/code/workflow artifacts stored inside a chat. A conversation may carry a project identifier, but project records, project instructions, documents, and the rest of the workspace are not synchronized.</p>
+        <p><strong>What does not sync:</strong> attachment files or attachment records; raw imported documents and their extracted text or OCR; source-citation records; attachment-analysis records; generated-image records or image files; projects and project content; the Document Library and RAG index; memory items; the separate generated-image library; settings; composer drafts; local diagnostics; and raw or temporary voice audio. If source or OCR content is pasted into a message, quoted in a response, or otherwise saved as ordinary chat text, that resulting chat text is synchronized.</p>
+        <p>Version 3 stores inline chat payloads and sensitive preview/deletion fields using CloudKit encrypted values. Larger encoded chat payloads use assets in the private CloudKit database. Non-content integrity and ordering metadata, including schema version, revision, checksum, and update time, remains ordinary CloudKit record metadata. Apple handles iCloud data under its applicable terms and privacy practices.</p>
+      </article>
+
+      <article class="detail-panel">
+        <h2>iCloud availability, conflicts, and integrity</h2>
+        <p>If no Apple Account is signed into iCloud, or iCloud is restricted or temporarily unavailable, LocalML does not fetch, upload, or confirm pending CloudKit operations. Local chats remain available on the device, the app reports the account status, and sync can be retried after iCloud becomes available. The sync preference may remain enabled while it is waiting.</p>
+        <p>When the same conversation exists on two devices, LocalML resolves it automatically. The copy with the later conversation update time supplies shared conversation metadata; a tie favors the current device. Messages whose identifiers exist on only one side are retained, while the selected copy is used when the same message identifier has different content. Local-only attachment, citation, image, and analysis fields already present on the current device are preserved. LocalML does not provide a conflict chooser or alternate-version history and is not a real-time collaborative editor.</p>
+        <p>There is no read-only CloudKit mode. If LocalML encounters an unsupported record version or a record that fails checksum, identity, or deletion-record validation, it rejects the fetched snapshot instead of partially merging it. The existing local workspace remains available and the app reports a sync failure.</p>
+      </article>
+
+      <article class="detail-panel">
+        <h2>iCloud deletion and turning sync off</h2>
+        <p>Turning iCloud chat sync off stops LocalML from scheduling new chat transfers. It does not delete existing records from iCloud and does not clear deletion or retry work already stored on the device. A chat deleted while sync is off is deleted only from that device and may return if sync is enabled again while an older iCloud copy still exists.</p>
+        <p>When sync is on, LocalML records deletion intent in a protected local journal, uploads a deletion record, and then asks CloudKit to remove the conversation record. A local deletion can finish before CloudKit confirms the remote deletion. Transient failures remain queued for retry; account, permission, or quota problems require user action, and LocalML reports the failure rather than claiming completion. A CloudKit deletion record becomes eligible for cleanup after 365 days when no live conversation record remains, but it may remain longer until a later sync performs that cleanup. Apple may retain iCloud data under its own retention, backup, legal, and account rules.</p>
       </article>
 
       <article class="detail-panel">

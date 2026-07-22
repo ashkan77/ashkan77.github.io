@@ -59,8 +59,28 @@
       </article>
 
       <article class="detail-panel">
+        <h2>Optional iCloud chat sync</h2>
+        <p>iCloud chat sync is optional and off by default. Enable it in <strong>Settings &gt; Data &amp; Privacy</strong>. It uses the private CloudKit database of your Apple Account and is not required for the local workspace. It synchronizes supported conversation content, not the full LocalML workspace. Attachment files, attachment analysis, source-citation records, generated-image records and files, projects, documents, RAG data, memory, raw voice audio, settings, drafts, and diagnostics are not synchronized. Text pasted or quoted into a normal chat message, including a sent voice transcript, is chat text and does synchronize.</p>
+      </article>
+
+      <article class="detail-panel">
+        <h2>iCloud sync is unavailable</h2>
+        <p>Confirm that the device is signed into an Apple Account for iCloud, iCloud is not restricted, and chat sync is enabled in LocalML. If the status says <strong>Sign in to iCloud</strong>, <strong>Restricted</strong>, or <strong>Temporarily unavailable</strong>, your local chats remain usable and LocalML does not fetch, upload, or confirm pending CloudKit work. The sync switch may remain on while waiting; sign in or restore iCloud access, then choose <strong>Try Sync Again</strong> or <strong>Sync Now</strong>.</p>
+      </article>
+
+      <article class="detail-panel">
+        <h2>A deleted chat returned</h2>
+        <p>Turning sync off does not remove existing iCloud records. If you delete a chat while sync is off, that deletion applies only to the current device; an older iCloud copy can return when sync is enabled again. To delete a synchronized chat from iCloud, keep sync on, delete the chat, allow the Undo period to finish, and wait for <strong>Deleted from iCloud</strong>. If LocalML reports a failure, restore iCloud access and retry. Local deletion can finish before CloudKit confirms remote deletion.</p>
+      </article>
+
+      <article class="detail-panel">
+        <h2>Conflicts and record-integrity errors</h2>
+        <p>LocalML automatically merges conversations; it does not provide a conflict chooser or alternate-version history. For the same conversation, the later conversation update supplies shared metadata, messages present on only one device are retained, and the selected copy is used if the same message identifier differs. If a CloudKit record has an unsupported version or fails checksum, identity, or deletion-record validation, LocalML rejects that fetched snapshot instead of partially merging it. Your existing local workspace remains available. Retry once; if the error continues, contact support with the exact status message but do not send private chat content.</p>
+      </article>
+
+      <article class="detail-panel">
         <h2>Storage and deletion</h2>
-        <p>LocalML 1.0 keeps workspace data locally and does not include CloudKit synchronization. Use the app's delete or clear controls for conversations, projects, memory, documents, and artifacts. Deleting the app removes its local container, subject to normal device backup behavior.</p>
+        <p>Local workspace categories can be reviewed and deleted in <strong>Settings &gt; Data &amp; Privacy</strong>. Turning iCloud chat sync off stops new sync activity but does not delete records already stored in iCloud or clear pending retry/deletion work. When sync is on, LocalML queues a protected deletion record and asks CloudKit to remove the conversation; transient failures retry and account, permission, or quota errors require attention. See the <a href="../privacy/localml.html">LocalML Privacy Policy</a> for the exact synchronized fields and retention behavior.</p>
       </article>
 
       <article class="detail-panel">
