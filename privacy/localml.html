@@ -30,91 +30,87 @@
     <section class="section-shell page-hero reveal-section">
       <p class="eyebrow">Privacy Policy</p>
       <h1>LocalML Privacy Policy</h1>
-      <p class="hero-text">LocalML is designed as a privacy-first Apple-native workspace. This policy describes the planned data practices for LocalML 1.0 and will be reviewed before release whenever product behavior changes.</p>
-      <p class="hero-text">Last updated: July 22, 2026</p>
+      <p class="hero-text">LocalML is a privacy-first Apple-native workspace. This policy describes how the released LocalML app handles information.</p>
+      <p class="hero-text">Effective date: August 14, 2026</p>
     </section>
 
     <section class="section-shell detail-grid reveal-section">
       <article class="detail-panel">
-        <h2>Summary</h2>
-        <p>LocalML is designed to keep your AI workspace under your control. Core workspace data stays on your device unless you explicitly export or share it. Optional iCloud chat sync can copy the supported parts of conversations to the private CloudKit database of your Apple Account. LocalML does not use advertising SDKs, third-party advertising tracking, or third-party AI model providers.</p>
+        <h2>Provider and summary</h2>
+        <p>LocalML is provided by Ashkan Zanjani. Core workspace data stays on your device unless you explicitly export or share it or enable optional iCloud chat sync. LocalML does not use advertising SDKs, tracking SDKs, third-party analytics SDKs, or third-party AI model providers.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>Content you choose to use</h2>
-        <p>The app may process text you enter and files, documents, photos, screenshots, camera captures, or audio you explicitly select. This content is used only to perform the requested feature, such as answering a question, summarizing a document, reviewing an image, transcribing speech, creating an artifact, or exporting content.</p>
+        <h2>On-device Apple model processing</h2>
+        <p>When Apple Intelligence and Apple Foundation Models are available, LocalML text generation runs on device through Apple's Foundation Models framework. The app does not send prompts, documents, chat history, attachments, or voice transcripts to OpenAI, Anthropic, Google, Hugging Face, or another third-party AI provider. If Apple Intelligence is unavailable, LocalML explains the applicable device, language, region, operating-system, or model-readiness requirement instead of routing the request to another model provider.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>Apple intelligence processing</h2>
-        <p>LocalML is designed around Apple-provided intelligence and system frameworks. Processing is performed on device whenever the selected feature and device support it. If a user explicitly invokes an Apple-provided feature that requires Apple services, the selected content may be handled by Apple under Apple's applicable terms and privacy practices.</p>
-        <p>LocalML is not designed to send user content to third-party AI model providers.</p>
-      </article>
-
-      <article class="detail-panel">
-        <h2>Local storage</h2>
-        <p>Chats, projects, project preferences, scoped memory, saved answers, imported-document data, generated artifacts, diagnostics, and app settings may be stored locally so LocalML can provide, recover, and delete its features. When iCloud chat sync is off, new chat changes remain on this device unless you explicitly export or share them. Turning sync off does not delete chat records already stored in iCloud.</p>
+        <h2>Information stored locally</h2>
+        <p>Depending on the features you use, chats, prompts, projects, imported-document text, local search chunks, OCR text, citations, generated artifacts and images, optional memory, settings, local diagnostics, and temporary voice files may be stored on your device. This information remains local unless you explicitly share or export it or enable the optional iCloud chat-sync path described below.</p>
+        <p>You can review and delete local categories in <strong>Settings &gt; Data &amp; Privacy</strong>. Exports and feedback reports use Apple's system share sheet; LocalML does not choose a destination or upload them automatically.</p>
       </article>
 
       <article class="detail-panel">
         <h2>Optional iCloud chat sync</h2>
-        <p>iCloud chat sync is off by default. If you enable it in <strong>Settings &gt; Data &amp; Privacy</strong> and iCloud is available, LocalML uses the private CloudKit database of your Apple Account so supported conversation data can continue across your Apple devices. The developer does not operate a separate server for this sync.</p>
-        <p><strong>What syncs:</strong> conversation and message identifiers; conversation titles and previews; message text, including sent voice transcripts and text pasted or quoted from a source; saved model-facing requests and responses; timestamps and message status; model, routing, privacy, pin, favorite, archive, read, reaction, and latency metadata; and structured answers, charts, and text/table/code/workflow artifacts stored inside a chat. A conversation may carry a project identifier, but project records, project instructions, documents, and the rest of the workspace are not synchronized.</p>
-        <p><strong>What does not sync:</strong> attachment files or attachment records; raw imported documents and their extracted text or OCR; source-citation records; attachment-analysis records; generated-image records or image files; projects and project content; the Document Library and RAG index; memory items; the separate generated-image library; settings; composer drafts; local diagnostics; and raw or temporary voice audio. If source or OCR content is pasted into a message, quoted in a response, or otherwise saved as ordinary chat text, that resulting chat text is synchronized.</p>
-        <p>Version 3 stores inline chat payloads and sensitive preview/deletion fields using CloudKit encrypted values. Larger encoded chat payloads use assets in the private CloudKit database. Non-content integrity and ordering metadata, including schema version, revision, checksum, and update time, remains ordinary CloudKit record metadata. Apple handles iCloud data under its applicable terms and privacy practices.</p>
+        <p>iCloud chat sync is off by default. If you enable it, LocalML stores supported conversation fields in the private CloudKit database of your Apple Account so conversations can continue across your Apple devices. The developer does not operate a separate sync server and does not access users' private CloudKit records through a support or administrative service.</p>
+        <p>Synced chat payloads can include conversation and message identifiers, titles, previews, message text, sent voice transcripts, saved requests and responses, timestamps, message status, routing and display metadata, and structured answers or artifacts stored in a chat. Attachment files, raw imported documents, raw OCR sources, source-citation records, generated-image files, projects, the document index, memory, settings, local diagnostics, composer drafts, and raw voice audio do not sync as separate fields.</p>
+        <p>Schema version 3 stores inline chat payloads and sensitive preview and deletion fields with CloudKit encrypted values. Larger encoded chat payloads use assets in the private CloudKit database. Integrity and ordering metadata such as schema version, revision, checksum, and update time remains ordinary record metadata and contains no chat text.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>iCloud availability, conflicts, and integrity</h2>
-        <p>If no Apple Account is signed into iCloud, or iCloud is restricted or temporarily unavailable, LocalML does not fetch, upload, or confirm pending CloudKit operations. Local chats remain available on the device, the app reports the account status, and sync can be retried after iCloud becomes available. The sync preference may remain enabled while it is waiting.</p>
-        <p>When the same conversation exists on two devices, LocalML resolves it automatically. The copy with the later conversation update time supplies shared conversation metadata; a tie favors the current device. Messages whose identifiers exist on only one side are retained, while the selected copy is used when the same message identifier has different content. Local-only attachment, citation, image, and analysis fields already present on the current device are preserved. LocalML does not provide a conflict chooser or alternate-version history and is not a real-time collaborative editor.</p>
-        <p>There is no read-only CloudKit mode. If LocalML encounters an unsupported record version or a record that fails checksum, identity, or deletion-record validation, it rejects the fetched snapshot instead of partially merging it. The existing local workspace remains available and the app reports a sync failure.</p>
+        <h2>Web Source Access</h2>
+        <p>Web Source Access is off by default. If you enable it, LocalML can contact a public HTTPS address you provide or a page selected through General Web Research to retrieve readable source text. The destination website receives ordinary connection information such as your IP address and may apply its own logging, terms, retention, and privacy policy. LocalML uses an ephemeral connection without stored cookies, credentials, cache, or a referrer and does not copy fetched pages to a developer-operated server.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>iCloud deletion and turning sync off</h2>
-        <p>Turning iCloud chat sync off stops LocalML from scheduling new chat transfers. It does not delete existing records from iCloud and does not clear deletion or retry work already stored on the device. A chat deleted while sync is off is deleted only from that device and may return if sync is enabled again while an older iCloud copy still exists.</p>
-        <p>When sync is on, LocalML records deletion intent in a protected local journal, uploads a deletion record, and then asks CloudKit to remove the conversation record. A local deletion can finish before CloudKit confirms the remote deletion. Transient failures remain queued for retry; account, permission, or quota problems require user action, and LocalML reports the failure rather than claiming completion. A CloudKit deletion record becomes eligible for cleanup after 365 days when no live conversation record remains, but it may remain longer until a later sync performs that cleanup. Apple may retain iCloud data under its own retention, backup, legal, and account rules.</p>
+        <h2>General Web Research and Brave Search</h2>
+        <p>General Web Research is off by default and requires Web Source Access plus a Brave Search API key that you save in the device Keychain. When you request public-web research, an on-device Apple model may create one bounded query. LocalML sends Brave Search the query, basic language or region parameters, and your API credential. It does not send Brave your chat history, attachments, documents, memory, fetched page text, voice transcript, model answer, or precise location.</p>
+        <p>Brave can associate the request with your Brave Search API account and may retain or process the query under its terms and privacy policy. For App Store privacy reporting, the bounded query is treated as linked <strong>Search History</strong> used only for App Functionality and not for tracking. Brave returns public result locators; LocalML contacts a bounded number of selected websites separately and performs final synthesis on device with Apple Foundation Models. Cited URLs and excerpts may remain in your local conversation.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>Permissions</h2>
-        <p>LocalML may request access to photos, camera, microphone, speech recognition, files, or notifications only when a feature needs that permission. You can deny or later change permissions in system settings. Denying a permission may disable the related feature without preventing unrelated app features from working.</p>
+        <h2>Apple Online Research and Apple Maps</h2>
+        <p>Apple Online Research is enabled by default and can be turned off in <strong>Settings &gt; Data &amp; Privacy</strong>. For recognized place, address, landmark, or point-of-interest requests, LocalML sends a bounded version of the request to Apple Maps. It does not include your chat history, documents, memory, voice transcript, or precise device location. Apple Maps results are supplied as sources to the on-device Apple Foundation Models response. Apple handles Apple Maps according to Apple's terms and privacy practices.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>Diagnostics and analytics</h2>
-        <p>LocalML 1.0 is not designed to include a third-party analytics or advertising SDK. Apple or the operating system may provide crash reports, performance diagnostics, App Store analytics, or purchase information according to the user's Apple settings. This information may be used to improve reliability and resolve defects.</p>
+        <h2>Optional Spotlight indexing</h2>
+        <p>Spotlight integration is off by default. If enabled, LocalML indexes only approved document and generated-image metadata. It does not index raw chat transcripts, raw document contents, screenshot OCR, voice transcripts, memory, or internal prompts. The named Spotlight index uses Apple Data Protection.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>Purchases</h2>
-        <p>If LocalML offers purchases or subscriptions, payment processing, receipts, refunds, and purchase restoration are handled through Apple's App Store and StoreKit systems. The developer does not receive payment card details.</p>
+        <h2>Camera, photos, microphone, and speech</h2>
+        <p>Camera access is requested only when you choose to capture an image for visual analysis or OCR. The system photo picker is used when you choose an existing image. Selected pixels are analyzed on device with Apple Vision; LocalML does not use face regions for identity or emotion inference and does not automatically open barcode content.</p>
+        <p>Microphone and Speech access are requested only when you start dictation or a voice conversation. Transcription requires an on-device Apple Speech path and does not fall back to a third-party transcription service. Spoken replies use installed Apple system voices. Temporary voice files are protected on device and included in LocalML cleanup controls.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>Support communication</h2>
-        <p>If you contact support, the email address and information you choose to include are used to understand and respond to your request. Do not include private documents, sensitive prompts, health information, passwords, payment information, or other confidential content unless it is strictly necessary.</p>
+        <h2>Feedback, diagnostics, analytics, and tracking</h2>
+        <p>LocalML can prepare a response-feedback report, but nothing is uploaded automatically. If you explicitly include an Apple Foundation diagnostic, the protected report may contain the in-memory Foundation Models session transcript and is shared only after you choose a destination in the system share sheet.</p>
+        <p>The app contains no developer-operated telemetry endpoint, advertising SDK, third-party analytics SDK, or cross-app tracking mechanism. Apple may provide system crash or App Store analytics according to your Apple settings and Apple's policies.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>Deletion and control</h2>
-        <p>You can delete conversations, projects, memories, documents, and artifacts through available in-app controls. You can also revoke system permissions or delete the app. For deletion requests concerning support emails, contact support from the same email address used for the request.</p>
+        <h2>Price and purchases</h2>
+        <p>LocalML is offered free of charge and contains no subscriptions or in-app purchases. It contains no advertising.</p>
+      </article>
+
+      <article class="detail-panel">
+        <h2>Retention and deletion</h2>
+        <p>Local information is retained until you delete it, remove the app, or iOS removes the app's data. LocalML provides category-specific and broad deletion controls. Turning iCloud chat sync off stops future sync but does not automatically delete existing iCloud records. When sync is enabled, LocalML records deletion intent locally and retries transient CloudKit failures until Apple confirms the operation. A CloudKit deletion record becomes eligible for cleanup after 365 days when no live conversation record remains, but it may remain longer until a later sync performs cleanup.</p>
+        <p>Apple may retain iCloud, system diagnostic, Siri, Speech, Spotlight, Image Playground, or Apple Maps information according to Apple's own terms, account settings, legal requirements, and retention practices. To request deletion of information contained in a support email, contact support from the address used for that request.</p>
       </article>
 
       <article class="detail-panel">
         <h2>Children</h2>
-        <p>LocalML is not directed to children and is not designed to knowingly collect personal information from children. A parent or guardian may contact support if they believe a child submitted personal information through a support message.</p>
+        <p>LocalML is a general-purpose productivity app and is not designed or marketed for the Kids Category. Do not provide information about a child unless you have the authority and legal basis to do so.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>Changes</h2>
-        <p>This policy may be updated to reflect changes in LocalML features, Apple platform behavior, data practices, or legal requirements. The date at the top of the page identifies the current revision.</p>
-      </article>
-
-      <article class="detail-panel">
-        <h2>Contact</h2>
-        <p>For privacy questions, contact <a href="mailto:azanjani@me.com?subject=LocalML%20Privacy">azanjani@me.com</a>. For troubleshooting, use the <a href="../support/localml.html">LocalML Support page</a>.</p>
+        <h2>Changes and contact</h2>
+        <p>This policy may be updated when LocalML data practices change. Material changes will be reflected by updating the effective date.</p>
+        <p>For privacy questions or deletion requests, contact <a href="mailto:azanjani@me.com?subject=LocalML%20Privacy">azanjani@me.com</a>. For troubleshooting, use the <a href="../support/localml.html">LocalML Support page</a>.</p>
       </article>
     </section>
   </main>
