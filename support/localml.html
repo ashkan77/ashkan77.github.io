@@ -30,7 +30,7 @@
     <section class="section-shell page-hero reveal-section">
       <p class="eyebrow">Support</p>
       <h1>LocalML Support</h1>
-      <p class="hero-text">Help with conversations, documents, images, voice, projects, memory, exports, Apple intelligence availability, and privacy controls.</p>
+      <p class="hero-text">Help with conversations, documents, images, voice, projects, memory, exports, Apple Intelligence availability, online research, iCloud sync, and privacy controls.</p>
       <div class="actions">
         <a class="button primary" href="mailto:azanjani@me.com?subject=LocalML%20Support">Email support</a>
         <a class="button secondary" href="../privacy/localml.html">Privacy Policy</a>
@@ -40,57 +40,57 @@
     <section class="section-shell detail-grid reveal-section">
       <article class="detail-panel">
         <h2>Before contacting support</h2>
-        <p>Restart LocalML, confirm the device has enough free storage, install the latest available operating-system update, and try the action again in a new conversation. For document or image issues, test with a smaller file to identify whether the problem is file-specific.</p>
+        <p>Restart LocalML, confirm the device has enough free storage, install the latest available operating-system update, and try the action again in a new conversation. Include the LocalML version and build, device model, operating-system version, feature involved, and exact visible error. Do not include private documents, passwords, health or financial information, or a full chat export.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>Intelligence unavailable</h2>
-        <p>Some LocalML features depend on Apple intelligence capabilities, supported hardware, installed system resources, language availability, and regional availability. Check the app's Intelligence settings and the related Apple system settings on the device.</p>
+        <h2>Apple Intelligence is unavailable</h2>
+        <p>Core AI features require an Apple Intelligence-capable device, Apple Intelligence enabled, a supported device and app language and region, and a ready Apple Foundation model. LocalML intentionally does not route the request to a third-party AI provider when those requirements are not met.</p>
       </article>
 
       <article class="detail-panel">
         <h2>Documents and visual context</h2>
-        <p>Confirm that Files, Photos, or Camera permission is available for the feature you are using. Password-protected, damaged, unusually large, or unsupported files may not import or analyze correctly.</p>
+        <p>Confirm that Files, Photos, or Camera permission is available for the feature you are using. Password-protected, damaged, unusually large, or unsupported files may not import or analyze correctly. Selected images and extracted text are processed locally for the active workflow.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>Voice</h2>
-        <p>Confirm microphone and speech-recognition permissions, speak after the recording indicator appears, and review the transcript before sending. Recognition quality can vary by language, background noise, device support, and downloaded system resources.</p>
+        <h2>Voice input is unavailable</h2>
+        <p>Review LocalML's Microphone and Speech permissions in iOS Settings, speak after the recording indicator appears, and review the transcript before sending. LocalML requires an on-device Apple Speech path and does not use a third-party transcription fallback. Spoken replies use installed Apple system voices.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>Optional iCloud chat sync</h2>
-        <p>iCloud chat sync is optional and off by default. Enable it in <strong>Settings &gt; Data &amp; Privacy</strong>. It uses the private CloudKit database of your Apple Account and is not required for the local workspace. It synchronizes supported conversation content, not the full LocalML workspace. Attachment files, attachment analysis, source-citation records, generated-image records and files, projects, documents, RAG data, memory, raw voice audio, settings, drafts, and diagnostics are not synchronized. Text pasted or quoted into a normal chat message, including a sent voice transcript, is chat text and does synchronize.</p>
+        <h2>iCloud chat sync is unavailable</h2>
+        <p>iCloud chat sync is optional and off by default. Confirm that you are signed into an Apple Account for iCloud and have enabled chat sync in <strong>Settings &gt; Data &amp; Privacy</strong>. Sync uses your private CloudKit database and is not required for the local workspace. If the status reports an account, restriction, network, quota, or temporary-availability problem, restore access and choose <strong>Try Sync Again</strong> or <strong>Sync Now</strong>.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>iCloud sync is unavailable</h2>
-        <p>Confirm that the device is signed into an Apple Account for iCloud, iCloud is not restricted, and chat sync is enabled in LocalML. If the status says <strong>Sign in to iCloud</strong>, <strong>Restricted</strong>, or <strong>Temporarily unavailable</strong>, your local chats remain usable and LocalML does not fetch, upload, or confirm pending CloudKit work. The sync switch may remain on while waiting; sign in or restore iCloud access, then choose <strong>Try Sync Again</strong> or <strong>Sync Now</strong>.</p>
+        <h2>Web Source Access is unavailable</h2>
+        <p>Web Source Access is off by default. Enable it in <strong>Settings &gt; Data &amp; Privacy</strong> to read a public HTTPS address you provide or a page discovered through General Web Research. LocalML blocks local, private, reserved, credential-bearing, and otherwise unsafe destinations.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>A deleted chat returned</h2>
-        <p>Turning sync off does not remove existing iCloud records. If you delete a chat while sync is off, that deletion applies only to the current device; an older iCloud copy can return when sync is enabled again. To delete a synchronized chat from iCloud, keep sync on, delete the chat, allow the Undo period to finish, and wait for <strong>Deleted from iCloud</strong>. If LocalML reports a failure, restore iCloud access and retry. Local deletion can finish before CloudKit confirms remote deletion.</p>
+        <h2>General Web Research or Brave Search is unavailable</h2>
+        <p>General Web Research is off by default and requires Web Source Access plus a Brave Search API key saved in Keychain. Confirm both controls, verify that the current mode or project permits online sources, and check the Brave Search API account quota. LocalML sends Brave a bounded query, locale parameters, and the API credential, fetches selected result pages separately, and generates the final answer on device.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>Conflicts and record-integrity errors</h2>
-        <p>LocalML automatically merges conversations; it does not provide a conflict chooser or alternate-version history. For the same conversation, the later conversation update supplies shared metadata, messages present on only one device are retained, and the selected copy is used if the same message identifier differs. If a CloudKit record has an unsupported version or fails checksum, identity, or deletion-record validation, LocalML rejects that fetched snapshot instead of partially merging it. Your existing local workspace remains available. Retry once; if the error continues, contact support with the exact status message but do not send private chat content.</p>
+        <h2>Apple Online Research is unavailable</h2>
+        <p>Apple Online Research uses Apple Maps for recognized place, address, landmark, and point-of-interest requests. Confirm it is enabled in <strong>Settings &gt; Data &amp; Privacy</strong> and that the device has a connection. LocalML does not request precise location; include a city or neighborhood instead of “near me.” General topics require configured General Web Research or a public HTTPS source or document that you provide.</p>
+      </article>
+
+      <article class="detail-panel">
+        <h2>Share to LocalML is not visible</h2>
+        <p>In Safari, Files, or Photos, open the system Share sheet and use <strong>Edit Actions</strong> to add LocalML. The extension accepts links, selected text, images, and supported files. If a handoff does not appear, open LocalML manually within a few minutes. Content remains editable context and nothing is sent until you review it and tap <strong>Send</strong>.</p>
       </article>
 
       <article class="detail-panel">
         <h2>Storage and deletion</h2>
-        <p>Local workspace categories can be reviewed and deleted in <strong>Settings &gt; Data &amp; Privacy</strong>. Turning iCloud chat sync off stops new sync activity but does not delete records already stored in iCloud or clear pending retry/deletion work. When sync is on, LocalML queues a protected deletion record and asks CloudKit to remove the conversation; transient failures retry and account, permission, or quota errors require attention. See the <a href="../privacy/localml.html">LocalML Privacy Policy</a> for the exact synchronized fields and retention behavior.</p>
+        <p>Review and delete local workspace categories in <strong>Settings &gt; Data &amp; Privacy</strong>. Turning iCloud chat sync off stops new sync activity but does not delete records already stored in iCloud. When sync is enabled, LocalML queues deletion work and reports failures rather than claiming remote deletion before CloudKit confirms it.</p>
       </article>
 
       <article class="detail-panel">
-        <h2>Privacy</h2>
-        <p>Do not send private documents, confidential prompts, passwords, payment information, or sensitive screenshots in a support email. Review the <a href="../privacy/localml.html">LocalML Privacy Policy</a> for data-handling details.</p>
-      </article>
-
-      <article class="detail-panel">
-        <h2>What to include</h2>
-        <p>Include the LocalML version, device model, operating-system version, selected intelligence mode, the exact steps that produced the issue, and the text of any visible error. A redacted screenshot is helpful when it contains no sensitive content.</p>
+        <h2>Privacy and safety feedback</h2>
+        <p>Read the <a href="../privacy/localml.html">LocalML Privacy Policy</a> for data handling, online-source, CloudKit, retention, and deletion details. To report an incorrect, biased, offensive, sexual, or otherwise concerning AI response, choose <strong>Report this response</strong>. You can review the response and feedback fields before sharing; nothing is sent automatically.</p>
       </article>
 
       <article class="detail-panel">
