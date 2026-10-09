@@ -50,6 +50,7 @@ body {
 .brand-mark,
 .button.primary { background: linear-gradient(135deg, var(--blue), var(--cyan)); }
 .solira-icon { background: linear-gradient(135deg, #3fc7a9, #376ad8); }
+.womens-journal-icon { background: linear-gradient(135deg, #285561, #69968b); }
 .code-icon { background: linear-gradient(135deg, #252833, #6d6af2); }
 .localml-icon { background: linear-gradient(135deg, #3156c8, #6d6af2 52%, #38b89d); }
 .guide-icon { background: linear-gradient(135deg, #d99a46, #d96886); }

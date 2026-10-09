@@ -21,11 +21,12 @@ This website presents selected Apple-platform projects, App Store-facing links, 
 ## Current homepage focus
 
 ```text
-Solira Health       Flagship health product case study
-Code IDE            Apple-platform developer tool case study
-World Guide App     Travel and city guide project
-WatchAudio          watchOS audio player project
-App Store Profile   Official Apple developer profile link
+LocalML                Local-first Apple intelligence project
+Women's Health Journal iPhone health journaling project (in development)
+Solira Health          Distinct health companion project
+Code IDE               macOS developer tool case study
+Published apps         App Store product links and support pages
+App Store Profile      Official Apple developer profile link
 ```
 
 ## Structure
@@ -34,6 +35,7 @@ App Store Profile   Official Apple developer profile link
 index.html                    Premium homepage
 styles.css                    Global visual system and responsive styling
 projects/solira-health.html   Solira Health case study
+projects/womens-health-journal.html   Women's Health Journal pre-release case study
 projects/code-ide.html        Code IDE case study
 projects/world-guide.html     World Guide App case study
 projects/watchaudio.html      WatchAudio case study
