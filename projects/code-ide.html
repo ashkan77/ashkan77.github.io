@@ -3,57 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Code IDE case study by Ashkan Zanjani." />
-  <title>Code IDE — Ashkan Zanjani</title>
+  <meta name="description" content="Code IDE Studio — a native macOS code editor in development by Ashkan Zanjani, built for Apple silicon Macs on macOS 26." />
+  <title>Code IDE Studio — Ashkan Zanjani</title>
+  <link rel="canonical" href="https://ashkan77.github.io/projects/code-ide.html" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../overrides.css" />
   <link rel="stylesheet" href="../professional-theme.css" />
+  <link rel="stylesheet" href="../app-detail.css" />
+  <script src="../site.js" defer></script>
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="../index.html"><img class="brand-photo" src="../assets/profile.svg" alt="" /><span>Ashkan Zanjani</span></a>
+<body class="pro-body">
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="liquid-scroll-field" aria-hidden="true"></div>
+
+  <header class="site-header pro-nav">
+    <a class="brand pro-brand" href="../index.html" aria-label="Ashkan Zanjani home">
+      <img class="brand-photo" src="../assets/profile.svg" alt="" />
+      <span>Ashkan Zanjani</span>
+    </a>
     <nav class="nav" aria-label="Primary navigation">
-      <a href="../index.html#work">Work</a>
+      <a href="../index.html#selected-work">Work</a>
       <a href="../index.html#apps">Apps</a>
-      <a href="../index.html#profile">Profile</a>
-      <a href="../index.html#contact">Contact</a>
+      <a href="../privacy/code-ide-studio.html">Privacy</a>
+      <a href="../support/code-ide-studio.html">Support</a>
     </nav>
   </header>
 
   <main>
-    <section class="section-shell page-hero">
-      <p class="eyebrow">macOS · Developer Tools · Interface Systems</p>
-      <h1>Code IDE</h1>
-      <p class="hero-text">A modern developer tool direction focused on a clean editor shell, platform-level interaction patterns, visual clarity, and productivity-first interface architecture.</p>
+    <section class="app-detail-hero shell">
+      <div class="app-detail-main glass-panel">
+        <p class="eyebrow">macOS · Developer tools · SwiftUI</p>
+        <h1>Code IDE Studio</h1>
+        <p class="lead">A native Mac code editor built around a calm workspace: project navigation, editing, search and replace with recovery, a program console, Git, and device consoles — local-first, with no account and no automatic source-code upload.</p>
+        <div class="app-detail-actions">
+          <a class="app-store-badge" href="../support/code-ide-studio.html">Support</a>
+          <a class="app-secondary-link" href="../privacy/code-ide-studio.html">Privacy</a>
+          <a class="app-secondary-link" href="../index.html#selected-work">Back to projects</a>
+        </div>
+      </div>
+
+      <aside class="app-detail-side glass-panel">
+        <div class="app-icon-large app-letter-icon code-icon" aria-hidden="true">C</div>
+        <div class="app-meta-list">
+          <div><span>Category</span><strong>Developer tools</strong></div>
+          <div><span>Platform scope</span><strong>Apple silicon Macs · macOS 26+</strong></div>
+          <div><span>Release status</span><strong>In development · Not on the App Store</strong></div>
+        </div>
+      </aside>
     </section>
 
-    <section class="section-shell detail-grid">
-      <article class="detail-panel">
-        <h2>Project Direction</h2>
-        <p>Code IDE is a developer-tool concept shaped around a premium desktop experience. The interface direction prioritizes a refined toolbar, editor-focused layout, clear navigation, and a calm workspace that supports coding without visual noise.</p>
+    <section class="shell app-page-grid reveal-section">
+      <article class="app-detail-card">
+        <h2>Product direction</h2>
+        <p>Code IDE Studio is a focused, Apple-native editor rather than a cross-platform shell. The interface favors an editor-first layout, a refined toolbar, clear project navigation, and system conventions for files, permissions, and windows.</p>
+        <p>It works with the toolchains already installed on the Mac instead of bundling its own, and runs inside the macOS sandbox with explicit access to the files, folders, and tools the user selects.</p>
       </article>
-      <article class="detail-panel">
-        <h2>Technical Focus</h2>
-        <ul class="detail-list">
-          <li>Desktop interface structure</li>
-          <li>Editor shell and project navigation patterns</li>
-          <li>Design token and visual system planning</li>
-          <li>Glass-style interface direction with accessibility fallbacks</li>
-          <li>Release build and runtime validation planning</li>
+
+      <article class="app-detail-card">
+        <h2>Core experience</h2>
+        <ul class="feature-list">
+          <li>Open files in place or import them into a workspace copy</li>
+          <li>Project-wide search and Replace All with review and snapshot recovery</li>
+          <li>Run File and Run Target with an interactive program console</li>
+          <li>Optional Git integration for trusted folders</li>
+          <li>Serial and TCP/TLS device consoles</li>
+          <li>Optional local Spotlight indexing, off by default</li>
+        </ul>
+      </article>
+
+      <article class="app-detail-card">
+        <h2>Privacy and safety</h2>
+        <p>Code stays on the Mac. Environment values are stored in the macOS Keychain, Git never pushes on its own, and there is no developer-operated analytics. The support page also documents current limits, such as local servers being outside the signed product scope.</p>
+        <div class="app-detail-actions">
+          <a class="app-secondary-link" href="../privacy/code-ide-studio.html">Privacy Policy</a>
+          <a class="app-secondary-link" href="../support/code-ide-studio.html">Support page</a>
+        </div>
+      </article>
+
+      <article class="app-tech-card">
+        <h2>Technologies</h2>
+        <ul class="tech-list">
+          <li>SwiftUI</li>
+          <li>macOS App Sandbox and access bookmarks</li>
+          <li>Owned process groups with stdin, interrupt, and stop</li>
+          <li>Keychain-backed environment values</li>
+          <li>Optional Spotlight indexing</li>
+          <li>Serial and TCP/TLS consoles</li>
         </ul>
       </article>
     </section>
-
-    <section class="section-shell info-grid">
-      <div class="info-card"><h3>Role</h3><p>Product design direction, macOS UI/UX, SwiftUI architecture planning.</p></div>
-      <div class="info-card"><h3>Code</h3><p>Private repository. Public page shows only a project overview.</p></div>
-      <div class="info-card"><h3>Status</h3><p>Ongoing design and development exploration.</p></div>
-    </section>
   </main>
 
-  <footer class="site-footer">
-    <span>© 2026 Ashkan Zanjani. All rights reserved.</span>
-    <div><a href="../index.html">Home</a><a href="../privacy/solira-health.html">Privacy</a><a href="../support/solira-health.html">Support</a><a href="../index.html#contact">Contact</a></div>
+  <footer class="site-footer shell">
+    <span>© 2026 Ashkan Zanjani</span>
+    <div><a href="../index.html">Home</a><a href="../privacy/code-ide-studio.html">Privacy</a><a href="../support/code-ide-studio.html">Support</a><a href="../index.html#contact">Contact</a></div>
   </footer>
 </body>
 </html>

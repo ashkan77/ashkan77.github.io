@@ -22,27 +22,37 @@ This website presents selected Apple-platform projects, App Store-facing links, 
 
 ```text
 LocalML                Local-first Apple intelligence project
+Solira Health          Distinct health companion project (in development)
 Women's Health Journal iPhone health journaling project (in development)
-Solira Health          Distinct health companion project
-Code IDE               macOS developer tool case study
-Published apps         App Store product links and support pages
+Code IDE Studio        Native macOS code editor (in development)
+Published apps         World Guide: Offline AI Travel, DropClear, Watch Audio Player,
+                       Converter One, BMI Checker Plus
 App Store Profile      Official Apple developer profile link
 ```
 
 ## Structure
 
 ```text
-index.html                    Premium homepage
-styles.css                    Global visual system and responsive styling
-projects/solira-health.html   Solira Health case study
-projects/womens-health-journal.html   Women's Health Journal pre-release case study
-projects/code-ide.html        Code IDE case study
-projects/world-guide.html     World Guide App case study
-projects/watchaudio.html      WatchAudio case study
-privacy/index.html            Shared app privacy policy for App Store privacy URL use
-privacy/solira-health.html    Legacy redirect to the shared privacy policy
-support/solira-health.html    Solira Health support page
+index.html                 Homepage
+404.html                   Not-found page for GitHub Pages
+robots.txt, sitemap.xml    Search engine files
+site.js                    Scroll effects and live App Store icon lookup
+styles.css + *.css         Visual system (professional-theme.css imports the polish layers)
+apps/<app>.html            Product pages for published App Store apps
+projects/<project>.html    Case studies for projects in development
+support/                   Support Center and one support page per app
+privacy/                   Privacy Center and one privacy policy per app
+assets/                    Profile image and fallback artwork
 ```
+
+`projects/world-guide.html` and `projects/watchaudio.html` are redirects to their `apps/` pages.
+
+## Adding or updating an app
+
+1. Add or edit `apps/<app>.html`, `support/<app>.html`, and `privacy/<app>.html`.
+2. Add the card to `index.html`, `support/index.html`, and `privacy/index.html`.
+3. For App Store apps, add the entry to `appStoreApps` in `site.js` so the icon loads from Apple.
+4. Add the new pages to `sitemap.xml`.
 
 ## Repository model
 
@@ -60,4 +70,3 @@ Private code repositories should remain separate and private. This public reposi
 - App Store privacy labels should still be reviewed separately for each app.
 - The shared privacy page can be used as the general App Store privacy policy URL when it accurately covers the app's behavior.
 - Project pages are public case studies, not full code documentation.
-- App-specific App Store download links can be added when individual app URLs are available.

@@ -46,9 +46,9 @@ const appStoreApps = [
   },
   {
     id: '6738957040',
-    name: 'World Guide App',
-    subtitle: 'Travel and city guide',
-    url: 'https://apps.apple.com/tr/app/world-guide-app/id6738957040',
+    name: 'World Guide: Offline AI Travel',
+    subtitle: 'Offline AI travel guides',
+    url: 'https://apps.apple.com/tr/app/world-guide-offline-ai-travel/id6738957040',
     page: 'apps/world-guide-app.html',
     fallbackClass: 'guide-icon',
     fallbackAsset: 'assets/world-guide-app-fallback.svg',
