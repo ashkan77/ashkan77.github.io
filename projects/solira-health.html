@@ -3,38 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Solira Health case study by Ashkan Zanjani." />
+  <meta name="description" content="Solira Health — a privacy-first Apple health companion in development by Ashkan Zanjani." />
   <title>Solira Health — Ashkan Zanjani</title>
+  <link rel="canonical" href="https://ashkan77.github.io/projects/solira-health.html" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../overrides.css" />
   <link rel="stylesheet" href="../professional-theme.css" />
+  <link rel="stylesheet" href="../app-detail.css" />
+  <script src="../site.js" defer></script>
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="../index.html"><img class="brand-photo" src="../assets/profile.svg" alt="" /><span>Ashkan Zanjani</span></a>
+<body class="pro-body">
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="liquid-scroll-field" aria-hidden="true"></div>
+
+  <header class="site-header pro-nav">
+    <a class="brand pro-brand" href="../index.html" aria-label="Ashkan Zanjani home">
+      <img class="brand-photo" src="../assets/profile.svg" alt="" />
+      <span>Ashkan Zanjani</span>
+    </a>
     <nav class="nav" aria-label="Primary navigation">
-      <a href="../index.html#work">Work</a>
+      <a href="../index.html#selected-work">Work</a>
       <a href="../index.html#apps">Apps</a>
-      <a href="../index.html#profile">Profile</a>
-      <a href="../index.html#contact">Contact</a>
+      <a href="../privacy/solira-health.html">Privacy</a>
+      <a href="../support/solira-health.html">Support</a>
     </nav>
   </header>
 
   <main>
-    <section class="section-shell page-hero">
-      <p class="eyebrow">Health · SwiftUI · watchOS · Privacy</p>
-      <h1>Solira Health</h1>
-      <p class="hero-text">A health companion focused on calm guidance, HealthKit-aware insights, privacy-first architecture, accessibility, widgets, watchOS, and App Store-safe non-diagnostic language.</p>
+    <section class="app-detail-hero shell">
+      <div class="app-detail-main glass-panel">
+        <p class="eyebrow">Health · SwiftUI · watchOS · Privacy</p>
+        <h1>Solira Health</h1>
+        <p class="lead">A health companion focused on calm guidance, HealthKit-aware insights, privacy-first architecture, accessibility, widgets, watchOS, and App Store-safe non-diagnostic language.</p>
+        <div class="app-detail-actions">
+          <a class="app-store-badge" href="../support/solira-health.html">Support</a>
+          <a class="app-secondary-link" href="../privacy/solira-health.html">Privacy</a>
+          <a class="app-secondary-link" href="../index.html#selected-work">Back to projects</a>
+        </div>
+      </div>
+
+      <aside class="app-detail-side glass-panel">
+        <div class="app-icon-large app-letter-icon solira-icon" aria-hidden="true">S</div>
+        <div class="app-meta-list">
+          <div><span>Category</span><strong>Health and wellbeing</strong></div>
+          <div><span>Platform scope</span><strong>iPhone and Apple Watch</strong></div>
+          <div><span>Release status</span><strong>In development · Not on the App Store</strong></div>
+        </div>
+      </aside>
     </section>
 
-    <section class="section-shell detail-grid">
-      <article class="detail-panel">
-        <h2>Project Direction</h2>
+    <section class="shell app-page-grid reveal-section">
+      <article class="app-detail-card">
+        <h2>Product direction</h2>
         <p>Solira Health is designed as a premium health companion that helps users understand patterns in recent data without replacing clinical judgment. The product direction prioritizes trustworthy summaries, deterministic health logic, clear safety boundaries, and refined interaction patterns.</p>
       </article>
-      <article class="detail-panel">
-        <h2>Technical Focus</h2>
-        <ul class="detail-list">
+
+      <article class="app-detail-card">
+        <h2>Technical focus</h2>
+        <ul class="feature-list">
           <li>SwiftUI-first interface architecture</li>
           <li>HealthKit integration and privacy-first data handling</li>
           <li>watchOS companion experience</li>
@@ -42,18 +68,21 @@
           <li>Accessibility, Dynamic Type, and contrast-focused UI validation</li>
         </ul>
       </article>
-    </section>
 
-    <section class="section-shell info-grid">
-      <div class="info-card"><h3>Role</h3><p>Product design, iOS engineering, UI/UX direction, release hardening.</p></div>
-      <div class="info-card"><h3>Code</h3><p>Private repository. Public page shows product and architecture summary only.</p></div>
-      <div class="info-card"><h3>Status</h3><p>Ongoing product development and App Store readiness work.</p></div>
+      <article class="app-detail-card">
+        <h2>Role and code</h2>
+        <p>Product design, iOS engineering, UI/UX direction, and release hardening. The code lives in a private repository; this page shows a product and architecture summary only.</p>
+        <div class="app-detail-actions">
+          <a class="app-secondary-link" href="../privacy/solira-health.html">Privacy Policy</a>
+          <a class="app-secondary-link" href="../support/solira-health.html">Support page</a>
+        </div>
+      </article>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <span>© 2026 Ashkan Zanjani. All rights reserved.</span>
-    <div><a href="../privacy/solira-health.html">Privacy</a><a href="../support/solira-health.html">Support</a></div>
+  <footer class="site-footer shell">
+    <span>© 2026 Ashkan Zanjani</span>
+    <div><a href="../index.html">Home</a><a href="../privacy/solira-health.html">Privacy</a><a href="../support/solira-health.html">Support</a><a href="../index.html#contact">Contact</a></div>
   </footer>
 </body>
 </html>
