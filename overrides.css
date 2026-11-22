@@ -154,6 +154,20 @@
   backdrop-filter: blur(34px) saturate(210%);
 }
 
+/* Dark mode: the base header uses a white glass overlay that washed out nav links. */
+@media (prefers-color-scheme: dark) {
+  .topbar,
+  .site-header {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.035)),
+      rgba(24,26,32,.70);
+  }
+
+  .topbar::after {
+    background: linear-gradient(180deg, rgba(255,255,255,.12), transparent 58%);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .topbar-scrolled {
     background:

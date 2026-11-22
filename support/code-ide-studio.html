@@ -3,39 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Support for Code IDE Studio by Ashkan Zanjani." />
+  <meta name="description" content="Support for Code IDE Studio by Ashkan Zanjani: troubleshooting, requirements, purchases, privacy, and how to contact support." />
+  <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)" />
   <title>Code IDE Studio Support — Ashkan Zanjani</title>
   <link rel="canonical" href="https://ashkan77.github.io/support/code-ide-studio.html" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../overrides.css" />
   <link rel="stylesheet" href="../professional-theme.css" />
   <link rel="stylesheet" href="../app-detail.css" />
+  <link rel="stylesheet" href="../policy-pages.css" />
   <script src="../site.js" defer></script>
 </head>
-<body class="pro-body">
+<body class="pro-body policy-page support-detail-page">
+  <a class="policy-skip-link" href="#main-content">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
   <div class="liquid-scroll-field" aria-hidden="true"></div>
-  <header class="site-header pro-nav">
-    <a class="brand pro-brand" href="../index.html"><img class="brand-photo" src="../assets/profile.svg" alt="" /><span>Ashkan Zanjani</span></a>
-    <nav class="nav" aria-label="Primary navigation"><a href="../projects/code-ide.html">Code IDE Studio</a><a href="./">Support Center</a><a href="../privacy/code-ide-studio.html">Privacy</a><a href="../index.html">Home</a></nav>
+
+  <header class="site-header topbar pro-nav">
+    <a class="brand pro-brand" href="../index.html" aria-label="Ashkan Zanjani home"><img class="brand-photo" src="../assets/profile.svg" alt="" /><span>Ashkan Zanjani</span></a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="../projects/code-ide.html">Code IDE Studio</a>
+      <a href="../privacy/code-ide-studio.html">Privacy</a>
+      <a href="../support/">Support Center</a>
+      <a href="../index.html">Home</a>
+    </nav>
   </header>
-  <main>
+
+  <main id="main-content">
     <section class="section-shell page-hero reveal-section">
       <p class="eyebrow">Support</p>
       <h1>Code IDE Studio Support</h1>
-      <div class="hero-text"><p>Code IDE Studio is in development for Apple silicon Macs running macOS 26 or later. This page describes the current product and its acceptance limits; it is not an announcement of App Store availability.</p></div>
-      <div class="actions"><a class="button primary" href="mailto:azanjani@me.com?subject=Code%20IDE%20Studio%20Support">Email support</a><a class="button secondary" href="../privacy/code-ide-studio.html">Privacy</a></div>
+      <p class="hero-text">Help with files and recovery, running programs, the Console, Git, device consoles, permissions, and privacy.</p>
+      <p class="policy-note"><strong>In development.</strong> Code IDE Studio is not yet available on the App Store. This page describes the current build for Apple silicon Macs running macOS 26 or later.</p>
+      <dl class="policy-meta">
+        <div><dt>Last updated</dt><dd><time datetime="2026-11-22">November 22, 2026</time></dd></div>
+        <div><dt>Status</dt><dd>In development</dd></div>
+      </dl>
+      <div class="actions"><a class="button primary" href="mailto:azanjani@me.com?subject=Code%20IDE%20Studio%20Support">Email support</a><a class="button secondary" href="../privacy/code-ide-studio.html">Privacy Policy</a></div>
     </section>
-    <section class="section-shell detail-grid reveal-section">
-      <article class="detail-panel"><h2>Contact support</h2><p>Email <a href="mailto:azanjani@me.com?subject=Code%20IDE%20Studio">azanjani@me.com</a> with Code IDE Studio in the subject. Support is available in English and Turkish. Include the app version, macOS version, language/tool version, the exact steps, expected result and a redacted error message. Do not send private projects, credentials or environment secrets.</p></article>
-      <article class="detail-panel"><h2>Files and recovery</h2><p>Open File edits the original. Import makes a workspace copy. If a save fails, keep the document open and inspect its error; Save As can preserve a separate copy. Compare external changes before replacing either version. Interrupted Replace All operations offer before, planned, buffer and disk review plus snapshot-copy recovery. Local recovery is not a backup.</p></article>
-      <article class="detail-panel"><h2>Running programs</h2><p>Code IDE does not bundle or install language runtimes or packages. Choose an existing toolchain and review its access in Settings. Run File uses the selected file; Run Target uses a supported project route. Native compiled-program execution in the signed sandbox is still under acceptance testing and is not claimed as universally available. Local web/development servers and programs opening network listeners are outside the current signed product scope, including server-based npm start targets.</p></article>
-      <article class="detail-panel"><h2>Console</h2><p>Edit input in the field below the output, then choose Send or press Return. EOF closes standard input; Interrupt sends SIGINT; Stop terminates the owned process group. Rejected input remains in the field. This Console is a program stream, not a full terminal emulator.</p></article>
-      <article class="detail-panel"><h2>Git and permissions</h2><p>Enable Git only for a folder you trust: repository configuration can invoke filters and hooks. Git can be disabled again in Source Control. The app does not push commits. Select files, folders and tools through the normal macOS access panels. Do not disable system security protections to work around a failed run.</p></article>
-      <article class="detail-panel"><h2>Devices</h2><p>The TCP/TLS console connects to an existing host and port; it does not host a service. Serial access depends on the device and driver. Camera preview starts only after an explicit action and permission and does not record or transmit frames. Firmware flashing and driver installation are not included.</p></article>
-      <article class="detail-panel"><h2>Privacy</h2><p>The Code IDE Studio privacy policy describes local files and recovery, Keychain environment values, optional Spotlight indexing, exports, external tools and support communication. No developer-operated analytics or automatic source-code upload is included.</p></article>
+
+    <section class="section-shell policy-glance reveal-section" aria-labelledby="quick-facts-title">
+      <h2 id="quick-facts-title">Quick facts</h2>
+      <div class="policy-glance-grid">
+        <div class="policy-glance-item"><span>Status</span><strong>In development</strong></div>
+        <div class="policy-glance-item"><span>Requires</span><strong>Mac with Apple silicon, macOS 26 or later</strong></div>
+        <div class="policy-glance-item"><span>Language runtimes</span><strong>Uses tools you install</strong></div>
+        <div class="policy-glance-item"><span>Git</span><strong>Local only, never pushes</strong></div>
+        <div class="policy-glance-item"><span>Account</span><strong>Not required</strong></div>
+        <div class="policy-glance-item"><span>Support languages</span><strong>English · Türkçe</strong></div>
+      </div>
+    </section>
+
+    <nav class="section-shell policy-toc" aria-label="Topics">
+      <span class="policy-toc-label">Topics</span>
+      <a href="#files-and-recovery">Files and recovery</a>
+      <a href="#running-programs">Running programs</a>
+      <a href="#console">Console</a>
+      <a href="#git-and-permissions">Git and permissions</a>
+      <a href="#devices">Devices</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#what-to-include">What to include</a>
+      <a href="#contact">Contact</a>
+      <a href="#project-page">Project page</a>
+    </nav>
+
+    <section class="section-shell detail-grid reveal-section" aria-label="Support topics">
+      <article class="detail-panel" id="files-and-recovery">
+        <h2>Files and recovery</h2>
+        <p>Open File edits the original; Import makes a workspace copy. If a save fails, keep the document open and read its error; Save As can preserve a separate copy. Compare external changes before replacing either version. Interrupted Replace All operations offer before, planned, buffer, and disk review plus snapshot-copy recovery. Local recovery is not a backup.</p>
+      </article>
+      <article class="detail-panel" id="running-programs">
+        <h2>Running programs</h2>
+        <p>Code IDE Studio does not bundle or install language runtimes or packages. Choose an existing toolchain and review its access in Settings. Run File uses the selected file; Run Target uses a supported project route. Native compiled-program execution in the signed sandbox is still under acceptance testing and is not claimed as universally available. Local web or development servers and programs that open network listeners, including server-based npm start targets, are outside the current signed product scope.</p>
+      </article>
+      <article class="detail-panel" id="console">
+        <h2>Console</h2>
+        <p>Type input in the field below the output, then choose Send or press Return. EOF closes standard input, Interrupt sends SIGINT, and Stop ends the owned process group. Rejected input stays in the field. The Console is a program stream, not a full terminal emulator.</p>
+      </article>
+      <article class="detail-panel" id="git-and-permissions">
+        <h2>Git and permissions</h2>
+        <p>Enable Git only for folders you trust, because repository configuration can run filters and hooks. You can turn Git off again in Source Control. The app does not push commits. Select files, folders, and tools through the standard macOS access panels, and never disable system security protections to work around a failed run.</p>
+      </article>
+      <article class="detail-panel" id="devices">
+        <h2>Devices</h2>
+        <p>The TCP/TLS console connects to an existing host and port and does not host a service. Serial access depends on the device and its driver. Camera preview starts only after an explicit action and permission and does not record or transmit frames. Firmware flashing and driver installation are not included.</p>
+      </article>
+      <article class="detail-panel" id="privacy">
+        <h2>Privacy</h2>
+        <p>Code IDE Studio has no developer-operated analytics and never uploads your source code automatically. Read the <a href="../privacy/code-ide-studio.html">Code IDE Studio Privacy Policy</a> for details.</p>
+      </article>
+      <article class="detail-panel" id="what-to-include">
+        <h2>What to include</h2>
+        <p>Include the app build, macOS version, language and tool versions, the exact steps, the expected result, and a redacted error message. Do not send private projects, credentials, or environment secrets. Remove personal details from screenshots before sending them.</p>
+      </article>
+      <article class="detail-panel" id="contact">
+        <h2>Contact</h2>
+        <p>Email <a href="mailto:azanjani@me.com?subject=Code%20IDE%20Studio%20Support">azanjani@me.com</a> with the app name in the subject. Support is available in English and Turkish (Türkçe destek verilir). </p>
+      </article>
+      <article class="detail-panel" id="project-page">
+        <h2>Project page</h2>
+        <p><a class="button secondary" href="../projects/code-ide.html">Open the Code IDE Studio case study</a></p>
+      </article>
     </section>
   </main>
-  <footer class="site-footer shell"><span>© 2026 Ashkan Zanjani</span><div><a href="../projects/code-ide.html">Project</a><a href="./">Support Center</a><a href="../privacy/code-ide-studio.html">Privacy</a></div></footer>
+
+  <footer class="site-footer shell">
+    <span>© 2026 Ashkan Zanjani</span>
+    <div><a href="../projects/code-ide.html">Code IDE Studio</a><a href="../privacy/">Privacy Center</a><a href="../support/">Support Center</a><a href="mailto:azanjani@me.com">Email</a></div>
+  </footer>
 </body>
 </html>
