@@ -16,14 +16,14 @@ https://apps.apple.com/ca/developer/ashkan-zanjani/id1501855480
 
 ## Purpose
 
-This website presents selected Apple-platform projects, App Store-facing links, support pages, a shared app privacy policy, and public case studies without exposing private source code.
+This website presents selected Apple-platform projects, App Store-facing links, a Support Center and Privacy Center with one page per app, and public case studies without exposing private source code.
 
 ## Current homepage focus
 
 ```text
 LocalML                Local-first Apple intelligence project
 Solira Health          Distinct health companion project (in development)
-Women's Health Journal iPhone health journaling project (in development)
+Women's Health Journal iPhone health journaling project (pre-release)
 Code IDE Studio        Native macOS code editor (in development)
 Published apps         World Guide: Offline AI Travel, DropClear, Watch Audio Player,
                        Converter One, BMI Checker Plus
@@ -50,7 +50,10 @@ assets/                    Profile image and fallback artwork
 ## Adding or updating an app
 
 1. Add or edit `apps/<app>.html`, `support/<app>.html`, and `privacy/<app>.html`.
-2. Add the card to `index.html`, `support/index.html`, and `privacy/index.html`.
+   Per-app privacy and support pages share one structure (hero with last-updated date,
+   "At a glance" / "Quick facts", on-page topic links, detail panels) styled by `policy-pages.css`.
+2. Add the card to `index.html`, `support/index.html`, and `privacy/index.html`, and add a row
+   to the "At a glance" table in `privacy/index.html`.
 3. For App Store apps, add the entry to `appStoreApps` in `site.js` so the icon loads from Apple.
 4. Add the new pages to `sitemap.xml`.
 
@@ -67,6 +70,8 @@ Private code repositories should remain separate and private. This public reposi
 ## Notes
 
 - Source code for apps should not be committed here.
-- App Store privacy labels should still be reviewed separately for each app.
-- The shared privacy page can be used as the general App Store privacy policy URL when it accurately covers the app's behavior.
+- App Store privacy labels should still be reviewed separately for each app, and each policy must match its label.
+- In App Store Connect, use the app-specific URLs: `https://ashkan77.github.io/privacy/<app>.html`
+  for the Privacy Policy URL and `https://ashkan77.github.io/support/<app>.html` for the Support URL.
+- When a policy changes, update its "Last updated" date and the dates on the Privacy Center cards.
 - Project pages are public case studies, not full code documentation.
