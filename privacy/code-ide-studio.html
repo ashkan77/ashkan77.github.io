@@ -37,7 +37,7 @@
       <p class="hero-text">Code IDE Studio is a native code editor that works locally on your Mac. It has no account, no analytics, no tracking, and no automatic upload of your source code. The developer does not collect data through the app.</p>
       <p class="policy-note"><strong>In development.</strong> Code IDE Studio is not yet available on the App Store. This page describes the current build for Apple silicon Macs running macOS 26 or later.</p>
       <dl class="policy-meta">
-        <div><dt>Last updated</dt><dd><time datetime="2026-11-22">November 22, 2026</time></dd></div>
+        <div><dt>Last updated</dt><dd><time datetime="2026-11-24">November 24, 2026</time></dd></div>
         <div><dt>Applies to</dt><dd>Pre-release builds for macOS 26 or later</dd></div>
         <div><dt>Provider</dt><dd>Ashkan Zanjani</dd></div>
       </dl>
@@ -48,7 +48,7 @@
       <h2 id="at-a-glance-title">At a glance</h2>
       <div class="policy-glance-grid">
         <div class="policy-glance-item"><span>Developer collects</span><strong>No data</strong></div>
-        <div class="policy-glance-item"><span>Your code</span><strong>Stays where you save it</strong></div>
+        <div class="policy-glance-item"><span>Your code</span><strong>Stays on your Mac unless you push or export it</strong></div>
         <div class="policy-glance-item"><span>Environment values</span><strong>Stored in macOS Keychain</strong></div>
         <div class="policy-glance-item"><span>Spotlight indexing</span><strong>Optional, off by default</strong></div>
         <div class="policy-glance-item"><span>Account</span><strong>Not required</strong></div>
@@ -63,6 +63,8 @@
       <a href="#environment-values">Environment values</a>
       <a href="#your-code-and-external-tools">Your code and external tools</a>
       <a href="#devices-camera-and-network">Devices, camera, and network</a>
+      <a href="#git-remotes">Git remotes</a>
+      <a href="#packages">Packages</a>
       <a href="#optional-system-features">Optional system features</a>
       <a href="#export-and-sharing">Export and sharing</a>
       <a href="#diagnostics-and-analytics">Diagnostics and analytics</a>
@@ -82,7 +84,7 @@
       </article>
       <article class="detail-panel" id="files-and-local-recovery">
         <h2>Files and local recovery</h2>
-        <p>Files and folders you select are used for editing, searching, saving, and running your code. macOS security-scoped bookmarks let the app reopen your selections. Workspace settings, recently opened file paths, editor state, and recovery copies of unsaved changes are stored locally in the app's container. Recovery records are removed as saved or discarded changes are reconciled. Your project files remain in the locations you choose.</p>
+        <p>Files and folders you select are used for editing, searching, saving, and running your code. macOS security-scoped bookmarks let the app reopen your selections. Workspace settings, recently opened file paths, editor state, breakpoints (file paths, line numbers and any conditions you type), and recovery copies of unsaved changes are stored locally in the app's container. The debugger connects only to the program you start, through local pipes, and sends nothing off your Mac. Recovery records are removed as saved or discarded changes are reconciled. Your project files remain in the locations you choose.</p>
       </article>
       <article class="detail-panel" id="environment-values">
         <h2>Environment values</h2>
@@ -90,11 +92,33 @@
       </article>
       <article class="detail-panel" id="your-code-and-external-tools">
         <h2>Your code and external tools</h2>
-        <p>Code IDE Studio does not install language runtimes or packages. You choose existing tools and when to run them. Your programs and tools may read files or contact services within the permissions available to them, and their behavior is governed by that code, its configuration, and the tools' own privacy policies. Review code before running it. The local Git interface never pushes changes to a remote repository.</p>
+        <p>Code IDE Studio includes a compiler or interpreter for each of its twenty programming languages, so running code works offline. Compilation and interpretation run locally when you choose Run, Debug, Check or Test. The runtimes may create local caches inside the sandbox. WASI Console passes the arguments, input and configured environment values to the guest program; the guest program can read and write files only in the workspace folder it runs in, and it has no network sockets. Other file targets run on macOS under App Sandbox, and you can also select external tools. Your programs and tools may read files or contact services within the permissions available to them, and their behavior is governed by that code, its configuration, and the tools' own privacy policies. Review code before running it.</p>
       </article>
       <article class="detail-panel" id="devices-camera-and-network">
         <h2>Devices, camera, and network</h2>
         <p>Serial and network consoles exchange only the data you choose to send with the device, host, and port you select. TLS is optional and shown in the network console. Received data is displayed locally. Camera access is requested only when you start a preview; frames are neither recorded nor transmitted, and the preview stops when you leave its page or switch apps. There is no microphone capture or global keyboard monitoring.</p>
+      </article>
+      <article class="detail-panel" id="git-remotes">
+        <h2>Git remotes</h2>
+        <p>Source Control uses the network only when you choose Fetch, Pull, Push or File &gt; Clone Repository…, and only with the remote host in the repository's address, such as github.com. That host receives the Git request, including your IP address, and, if you saved an account for it, your user name and access token. Code IDE Studio keeps saved accounts in your Keychain and doesn't send them anywhere else. File &gt; Open in Terminal opens a folder in macOS Terminal, outside the app.</p>
+      </article>
+      <article class="detail-panel" id="packages">
+        <h2>Packages</h2>
+        <p>Product &gt; Packages… uses the network only while an operation you start is running: adding, updating or removing a package, or checking for updates. Package operations may contact the registry for that language and its download hosts:</p>
+        <ul>
+          <li>Python: pypi.org and files.pythonhosted.org</li>
+          <li>JavaScript and TypeScript: registry.npmjs.org</li>
+          <li>Ruby: rubygems.org and index.rubygems.org</li>
+          <li>Java and Kotlin: repo1.maven.org</li>
+          <li>R: cloud.r-project.org</li>
+          <li>Dart: pub.dev and its storage hosts</li>
+          <li>PHP: repo.packagist.org and codeload.github.com</li>
+          <li>Perl: fastapi.metacpan.org and cpan.metacpan.org</li>
+          <li>Lua: luarocks.org and the source host each package names, often codeload.github.com or github.com</li>
+          <li>Julia: pkg.julialang.org and the package servers it redirects to</li>
+        </ul>
+        <p>Like any download, these requests reveal your IP address, the names and versions of the packages involved, and a User-Agent naming the client and its version: Code IDE Studio's package installer, npm with Node.js, RubyGems with Ruby, or Julia's package manager. npm also sends a random identifier for each operation. Julia's package manager also sends the Julia version and system type (macOS on Apple silicon) along with indicators for interactive use and continuous-integration environments. The Julia project states that its package servers keep IP addresses in logs for up to 31 days. Each service handles this information under its own privacy policy. The package installer does not upload your project source files to the developer.</p>
+        <p>Packages are stored in your workspace folder: .codeide (Python, Ruby, Java and Kotlin, R, Dart, Perl and Lua packages), node_modules and package.json, vendor and composer.json, requirements.txt, and Julia's Project.toml and Manifest.toml. Julia's registry and package files, and npm's download cache, are stored in the app's container. Removing a dependency updates that registry's installation or project records. Shared caches and Julia package files can remain on the Mac.</p>
       </article>
       <article class="detail-panel" id="optional-system-features">
         <h2>Optional system features</h2>
