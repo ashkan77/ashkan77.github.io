@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Support for Code IDE Studio by Ashkan Zanjani: troubleshooting, requirements, purchases, privacy, and how to contact support." />
+  <meta name="description" content="Support for Code IDE Studio by Ashkan Zanjani: running, debugging and testing code, packages, Git, requirements, privacy, and how to contact support." />
   <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)" />
   <title>Code IDE Studio Support — Ashkan Zanjani</title>
@@ -34,10 +34,10 @@
     <section class="section-shell page-hero reveal-section">
       <p class="eyebrow">Support</p>
       <h1>Code IDE Studio Support</h1>
-      <p class="hero-text">Help with files and recovery, running programs, the Console, Git, device consoles, permissions, and privacy.</p>
+      <p class="hero-text">Help with running, debugging and testing programs, packages, files and recovery, the Console, Git, device consoles, permissions, and privacy.</p>
       <p class="policy-note"><strong>In development.</strong> Code IDE Studio is not yet available on the App Store. This page describes the current build for Apple silicon Macs running macOS 26 or later.</p>
       <dl class="policy-meta">
-        <div><dt>Last updated</dt><dd><time datetime="2026-11-22">November 22, 2026</time></dd></div>
+        <div><dt>Last updated</dt><dd><time datetime="2026-11-24">November 24, 2026</time></dd></div>
         <div><dt>Status</dt><dd>In development</dd></div>
       </dl>
       <div class="actions"><a class="button primary" href="mailto:azanjani@me.com?subject=Code%20IDE%20Studio%20Support">Email support</a><a class="button secondary" href="../privacy/code-ide-studio.html">Privacy Policy</a></div>
@@ -48,8 +48,8 @@
       <div class="policy-glance-grid">
         <div class="policy-glance-item"><span>Status</span><strong>In development</strong></div>
         <div class="policy-glance-item"><span>Requires</span><strong>Mac with Apple silicon, macOS 26 or later</strong></div>
-        <div class="policy-glance-item"><span>Language runtimes</span><strong>Uses tools you install</strong></div>
-        <div class="policy-glance-item"><span>Git</span><strong>Local only, never pushes</strong></div>
+        <div class="policy-glance-item"><span>Languages</span><strong>20 included, runs offline</strong></div>
+        <div class="policy-glance-item"><span>Git</span><strong>Fetch, pull, push and clone over HTTPS</strong></div>
         <div class="policy-glance-item"><span>Account</span><strong>Not required</strong></div>
         <div class="policy-glance-item"><span>Support languages</span><strong>English · Türkçe</strong></div>
       </div>
@@ -57,8 +57,11 @@
 
     <nav class="section-shell policy-toc" aria-label="Topics">
       <span class="policy-toc-label">Topics</span>
-      <a href="#files-and-recovery">Files and recovery</a>
       <a href="#running-programs">Running programs</a>
+      <a href="#debugging-and-check">Debugging and Check</a>
+      <a href="#tests">Tests</a>
+      <a href="#packages">Packages</a>
+      <a href="#files-and-recovery">Files and recovery</a>
       <a href="#console">Console</a>
       <a href="#git-and-permissions">Git and permissions</a>
       <a href="#devices">Devices</a>
@@ -69,29 +72,43 @@
     </nav>
 
     <section class="section-shell detail-grid reveal-section" aria-label="Support topics">
-      <article class="detail-panel" id="files-and-recovery">
-        <h2>Files and recovery</h2>
-        <p>Open File edits the original; Import makes a workspace copy. If a save fails, keep the document open and read its error; Save As can preserve a separate copy. Compare external changes before replacing either version. Interrupted Replace All operations offer before, planned, buffer, and disk review plus snapshot-copy recovery. Local recovery is not a backup.</p>
-      </article>
       <article class="detail-panel" id="running-programs">
         <h2>Running programs</h2>
-        <p>Code IDE Studio does not bundle or install language runtimes or packages. Choose an existing toolchain and review its access in Settings. Run File uses the selected file; Run Target uses a supported project route. Native compiled-program execution in the signed sandbox is still under acceptance testing and is not claimed as universally available. Local web or development servers and programs that open network listeners, including server-based npm start targets, are outside the current signed product scope.</p>
+        <p>Choose File &gt; New File, pick a language and press Command-R. Python, Node.js, TypeScript, Java, Kotlin, C#, Ruby, PHP, Perl, Bash, Lua, R, Julia and Dart run with included macOS runtimes. C, C++, Go, Rust and Swift compile to WebAssembly and run in the included WASI Console, which is single-threaded and has no host files outside the workspace, network or Apple frameworks. Haskell runs with the included MicroHs. Running code needs no download.</p>
+        <p>The Native macOS option in Run Configuration is for people with their own macOS toolchain. App Sandbox can prevent programs it compiles from starting; the Console explains this and points to the included console. Local web servers and other programs that open a network listener are not supported.</p>
+      </article>
+      <article class="detail-panel" id="debugging-and-check">
+        <h2>Debugging and Check</h2>
+        <p>Product &gt; Debug works for single Python, Node.js, TypeScript, Ruby, Lua, Perl, Bash and R files: breakpoints with conditions, stepping, the call stack, variables and expressions. Product &gt; Check (Command-B) finds syntax and compile errors in single files in all 20 languages without running the program, except that Perl runs BEGIN blocks and use statements while checking. Kotlin scripts and project targets don't offer Check.</p>
+      </article>
+      <article class="detail-panel" id="tests">
+        <h2>Tests</h2>
+        <p>Product &gt; Test (Command-U) runs the workspace's tests with the included tools: unittest cases and test_* functions in Python, node --test for JavaScript, and Go and Rust tests built for WebAssembly, where each Rust test runs on its own. The Console's Tests tab lists the results, failures first; choose a failed test's location to open its line. Projects with their own test command (npm test, cargo test, or a go.mod that requires other modules) use it instead, with tools you provide. TypeScript tests need a test script in package.json.</p>
+      </article>
+      <article class="detail-panel" id="packages">
+        <h2>Packages</h2>
+        <p>Product &gt; Packages… adds, updates and removes libraries for Python (PyPI), JavaScript and TypeScript (npm), Ruby (RubyGems), Java and Kotlin (Maven Central), R (CRAN), Dart (pub.dev), PHP (Packagist), Perl (CPAN), Lua (LuaRocks) and Julia (General registry). Julia records dependencies in the project and stores its package files in the app container. The other registries install package files into the workspace.</p>
+        <p>Packages supports a subset of each registry. npm disables install scripts, RubyGems checks for native extensions and plugins before unpacking, and Julia skips build steps and artifact downloads. Lua evaluates each rockspec with an empty global environment and string methods disabled. Maven libraries are installed only together with their published source JARs. Python updates restore the previous version if they are interrupted. Projects managed by Composer, with composer.lock, are left unchanged. C, C++, Swift, Go, Rust, Haskell, C# and Bash have no package registry in Code IDE Studio.</p>
+      </article>
+      <article class="detail-panel" id="files-and-recovery">
+        <h2>Files and recovery</h2>
+        <p>Open File edits the original; Import makes a workspace copy. If a save fails, keep the document open and read its error; Save As can keep a separate copy. Compare external changes before replacing either version. Interrupted Replace All operations offer a review and snapshot-copy recovery. Local recovery is not a backup.</p>
       </article>
       <article class="detail-panel" id="console">
         <h2>Console</h2>
-        <p>Type input in the field below the output, then choose Send or press Return. EOF closes standard input, Interrupt sends SIGINT, and Stop ends the owned process group. Rejected input stays in the field. The Console is a program stream, not a full terminal emulator.</p>
+        <p>Type input in the field below the output, then press Return. End of Input closes standard input, Interrupt sends Control-C and Stop ends the program. Quitting Code IDE Studio ends any program or package operation it started. The Console is a program stream, not a terminal; for a shell with your own tools, choose File &gt; Open in Terminal.</p>
       </article>
       <article class="detail-panel" id="git-and-permissions">
         <h2>Git and permissions</h2>
-        <p>Enable Git only for folders you trust, because repository configuration can run filters and hooks. You can turn Git off again in Source Control. The app does not push commits. Select files, folders, and tools through the standard macOS access panels, and never disable system security protections to work around a failed run.</p>
+        <p>Enable Git only for a folder you trust: repository configuration can run filters and hooks. Git can be turned off again in Source Control. Fetch, Pull and Push use the repository's HTTPS remote, and File &gt; Clone Repository… clones one; for a private repository, add your user name and a personal access token for the host, which Code IDE Studio keeps in your Keychain. SSH remotes need keys an App Store app can't read. Select files, folders and tools through the standard macOS panels, and never turn off system security protections to work around a failed run.</p>
       </article>
       <article class="detail-panel" id="devices">
         <h2>Devices</h2>
-        <p>The TCP/TLS console connects to an existing host and port and does not host a service. Serial access depends on the device and its driver. Camera preview starts only after an explicit action and permission and does not record or transmit frames. Firmware flashing and driver installation are not included.</p>
+        <p>The TCP/TLS console connects to an existing host and port and does not host a service. Serial access depends on the device and its driver. Camera preview starts only after you choose it and grant permission, and it doesn't record or send frames. Firmware flashing and driver installation are not included.</p>
       </article>
       <article class="detail-panel" id="privacy">
         <h2>Privacy</h2>
-        <p>Code IDE Studio has no developer-operated analytics and never uploads your source code automatically. Read the <a href="../privacy/code-ide-studio.html">Code IDE Studio Privacy Policy</a> for details.</p>
+        <p>Code IDE Studio has no analytics, advertising, tracking or account, and never uploads your source code automatically. The network is used only for package operations and Git commands you start, and by programs you run. Read the <a href="../privacy/code-ide-studio.html">Code IDE Studio Privacy Policy</a> for the hosts involved and the data each receives.</p>
       </article>
       <article class="detail-panel" id="what-to-include">
         <h2>What to include</h2>
